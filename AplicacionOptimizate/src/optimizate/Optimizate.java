@@ -18,6 +18,8 @@ public class Optimizate extends javax.swing.JFrame {
     InicioDeSesion sesion ;
     Diagnostico2 diagnostico2;
     Diagnostico5 diagnostico5;
+    Diagnostico3 diagnostico3;
+    PantallaPrincipal Pprincipal;
     
     
 
@@ -33,24 +35,34 @@ public class Optimizate extends javax.swing.JFrame {
         
         setBounds(30,50,650,530);
         setResizable(false);
+        
         sesion =  new InicioDeSesion();
         diagnostico2 = new Diagnostico2();
+        diagnostico3 = new Diagnostico3();
         diagnostico5 = new Diagnostico5();
+        Pprincipal = new PantallaPrincipal();
+        
         
        
-        sesion.setBounds(30,50,540,415);
+        sesion.setBounds(30,50,562,415);
         diagnostico2.setBounds(30,50,562,370);
+        diagnostico3.setBounds(30,50,562,370);
         diagnostico5.setBounds(30,50,562,370);
+        Pprincipal.setBounds(30,50,581,405);
+       
         diagnostico2.setVisible(false);
+        diagnostico3.setVisible(false);
         diagnostico5.setVisible(false);
-        
+        Pprincipal.setVisible(false);
         
         
         
         add(sesion);
         
         add(diagnostico2);
+        add(diagnostico3);
         add(diagnostico5);
+        add(Pprincipal);
         
         
         
@@ -286,8 +298,17 @@ private class InicioDeSesion extends Sesion implements ActionListener{
             
             System.out.println("SE EJECUTO 1");
             diagnostico5.setVisible(false);
-            diagnostico2.setVisible(true);
+            diagnostico3.setVisible(true);
             sesion.setVisible(false);
+            revalidate();
+            repaint();
+            
+        }else if(diagnostico3.isVisible()){
+            
+            diagnostico3.setVisible(false);
+            diagnostico2.setVisible(true);
+            revalidate();
+            repaint();
             
         }
         
@@ -299,6 +320,8 @@ private class InicioDeSesion extends Sesion implements ActionListener{
             sesion.setVisible(true);
             Anterior.setVisible(false);
             Siguiente.setVisible(false);
+            revalidate();
+            repaint();
             
             
         }
@@ -308,11 +331,30 @@ private class InicioDeSesion extends Sesion implements ActionListener{
 
     private void SiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SiguienteActionPerformed
         // TODO add your handling code here:
-        System.out.println("SE EJECUTO 3");
+        
         
         if(diagnostico2.isVisible()){
+            System.out.println("SE EJECUTO 3");
+            
             diagnostico2.setVisible(false);
+            diagnostico3.setVisible(true);
+            revalidate();
+            repaint();
+        }else if(diagnostico3.isVisible()){
+            diagnostico3.setVisible(false);
             diagnostico5.setVisible(true);
+            revalidate();
+            repaint();
+        }
+        else if(diagnostico5.isVisible()){
+            Anterior.setVisible(false);
+            Siguiente.setVisible(false);
+            System.out.println("SE EJECUTO 4");
+            diagnostico5.setVisible(false);
+            Pprincipal.setVisible(true);
+            System.out.println(Pprincipal.getBounds());
+            revalidate();
+            repaint();
         }
     }//GEN-LAST:event_SiguienteActionPerformed
 
