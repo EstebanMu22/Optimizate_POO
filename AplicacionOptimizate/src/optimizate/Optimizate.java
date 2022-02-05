@@ -66,6 +66,7 @@ private class InicioDeSesion extends Sesion implements ActionListener{
         super();
         Entra.addActionListener(this);
         Siguiente.addActionListener(this);
+        Anterior.addActionListener(this);
  
         
     }
@@ -74,21 +75,13 @@ private class InicioDeSesion extends Sesion implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Anterior.setVisible(true);
-        Siguiente.setVisible(true);
-        sesion.setVisible(false);
         
         
-        diagnostico2.setVisible(true);
-        revalidate();
-        repaint();
+        if(e.getSource()==Entra){
+            EntraActionPerformed(e);
         
-        if(diagnostico2.isVisible() && e.getSource()==Siguiente){
-            System.out.println("Entro");
-            diagnostico5.setVisible(true);
-            diagnostico2.setVisible(false);
         }
-        
+       
     }
     
     
@@ -276,13 +269,51 @@ private class InicioDeSesion extends Sesion implements ActionListener{
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    private void EntraActionPerformed(java.awt.event.ActionEvent evt){
+        System.out.println("SE EJECUTA 0");
+        Anterior.setVisible(true);
+        Siguiente.setVisible(true);
+        sesion.setVisible(false);
+        diagnostico2.setVisible(true);
+        revalidate();
+        repaint();
+        
+    }
     private void AnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnteriorActionPerformed
         // TODO add your handling code here:
+        
+        if(diagnostico5.isVisible() && diagnostico2.isVisible()==false){
+            
+            System.out.println("SE EJECUTO 1");
+            diagnostico5.setVisible(false);
+            diagnostico2.setVisible(true);
+            sesion.setVisible(false);
+            
+        }
+        
+        else if(diagnostico2.isVisible()==true && diagnostico5.isVisible()== false && sesion.isVisible()== false){
+           
+            System.out.println("SE EJECUTO 2");
+            diagnostico5.setVisible(false);
+            diagnostico2.setVisible(false);
+            sesion.setVisible(true);
+            Anterior.setVisible(false);
+            Siguiente.setVisible(false);
+            
+            
+        }
+        
+
     }//GEN-LAST:event_AnteriorActionPerformed
 
     private void SiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SiguienteActionPerformed
         // TODO add your handling code here:
+        System.out.println("SE EJECUTO 3");
+        
+        if(diagnostico2.isVisible()){
+            diagnostico2.setVisible(false);
+            diagnostico5.setVisible(true);
+        }
     }//GEN-LAST:event_SiguienteActionPerformed
 
     /**
@@ -337,3 +368,4 @@ private class InicioDeSesion extends Sesion implements ActionListener{
     private javax.swing.JSeparator jSeparator7;
     // End of variables declaration//GEN-END:variables
 }
+
