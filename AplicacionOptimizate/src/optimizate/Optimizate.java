@@ -19,8 +19,9 @@ public class Optimizate extends javax.swing.JFrame {
     Diagnostico2 diagnostico2;
     Diagnostico5 diagnostico5;
     Diagnostico3 diagnostico3;
-    PantallaPrincipal Pprincipal;
+    PrincipalP Pprincipal;
     Registro registro;
+    Menu menu;
     
     
 
@@ -42,7 +43,8 @@ public class Optimizate extends javax.swing.JFrame {
         diagnostico2 = new Diagnostico2();
         diagnostico3 = new Diagnostico3();
         diagnostico5 = new Diagnostico5();
-        Pprincipal = new PantallaPrincipal();
+        Pprincipal = new PrincipalP();
+        menu = new Menu();
         
         
        
@@ -52,6 +54,7 @@ public class Optimizate extends javax.swing.JFrame {
         diagnostico3.setBounds(30,50,562,370);
         diagnostico5.setBounds(30,50,562,370);
         Pprincipal.setBounds(30,50,581,405);
+        menu.setBounds(0,0,187,300);
         
         registro.setVisible(false);
         
@@ -59,6 +62,7 @@ public class Optimizate extends javax.swing.JFrame {
         diagnostico3.setVisible(false);
         diagnostico5.setVisible(false);
         Pprincipal.setVisible(false);
+        menu.setVisible(false);
         
         
         
@@ -69,6 +73,7 @@ public class Optimizate extends javax.swing.JFrame {
         add(diagnostico3);
         add(diagnostico5);
         add(Pprincipal);
+        Pprincipal.add(menu);
         
         
         
@@ -104,9 +109,29 @@ private class InicioDeSesion extends Sesion implements ActionListener{
         }
        
     }
-    
-    
+  
 } 
+private class PrincipalP extends PantallaPrincipal implements ActionListener{
+    
+        
+    public PrincipalP(){
+        LogoMenu.addActionListener(this);
+        
+        
+    }
+       
+    private void LogoMenuActionPerformed(java.awt.event.ActionEvent evt) {  
+        menu.setVisible(true);
+        LogoMenu.setVisible(false);
+    }                                       
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        System.out.println("Aqui estot");
+        LogoMenuActionPerformed(e);
+     }
+    
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
