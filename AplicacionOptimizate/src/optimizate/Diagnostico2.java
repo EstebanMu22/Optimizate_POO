@@ -9,7 +9,8 @@ package optimizate;
  * @author sergio andres
  */
 public class Diagnostico2 extends javax.swing.JPanel {
-
+    
+    
     /**
      * Creates new form Diagnostico2
      */

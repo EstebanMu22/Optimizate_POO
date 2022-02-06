@@ -26,14 +26,14 @@ class Lavadora extends Electrodomesticos{
         
                         
     };
-    Object[][] ConsejosNeveraModerados = {
+    Object[][] ConsejosModerados = {
         {"Utiliza un buen detergente que use menos agua",10},
         {"Lava con agua fria",8},
         {"Usa programas cortos para lavar tu ropa de diario",8},
         {"Saca tu ropa apenas termine de lavar, asi no se arruga y evitas usar la plancha",3}
     };
     
-    Object[][] ConsejosNeveraComplejos ={
+    Object[][] ConsejosComplejos ={
         {"Si tu lavadora es muy antigua, consigue una eficiente",20},
         {"Manten la lavadora en buenas condiciones",12},
         {"Limpia el fitro",10}

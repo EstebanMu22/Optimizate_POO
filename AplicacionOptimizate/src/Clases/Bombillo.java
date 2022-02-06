@@ -13,7 +13,7 @@ import javax.swing.ImageIcon;
  *
  * @author sergio andres
  */
-class Bombillo extends Electrodomesticos{
+public class Bombillo extends Electrodomesticos{
     
     
     private final double EnergiaGastadaMes = 21.6;
@@ -24,12 +24,12 @@ class Bombillo extends Electrodomesticos{
         {"Ilumina tu casa con luz natural",3}
                         
     };
-    Object[][] ConsejosNeveraModerados = {
+    Object[][] ConsejosModerados = {
         {"Concientiza a los demas de apagar las luces",10},
         {"Sustituye tus bombillos antiguos por unos led",8},
     };
     
-    Object[][] ConsejosNeveraComplejos ={
+    Object[][] ConsejosComplejos ={
         {"Usa reguladores de intensida de luz a los niveles mas bajos",20},
         {"Se muy estricto con las horas de uso",12},
          

@@ -21,13 +21,13 @@ class Microondas extends Electrodomesticos{
         {"Bajale a los minutos de calentamiento",2},
                                  
     };
-    Object[][] ConsejosNeveraModerados = {
+    Object[][] ConsejosModerados = {
         {"Usa Recipientes Circulares",10},
         {"Limpia el microondas",8},
         {"Comprueba que el microondas este en buen estado",5}
     };
     
-    Object[][] ConsejosNeveraComplejos ={
+    Object[][] ConsejosComplejos ={
         {"Compra papel Stretch para calentar tu comida",15},
         {"Usa vidrio Pirex para calentar tu comida",12},
          
