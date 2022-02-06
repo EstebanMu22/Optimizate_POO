@@ -20,6 +20,7 @@ public class Optimizate extends javax.swing.JFrame {
     Diagnostico5 diagnostico5;
     Diagnostico3 diagnostico3;
     PantallaPrincipal Pprincipal;
+    Registro registro;
     
     
 
@@ -37,6 +38,7 @@ public class Optimizate extends javax.swing.JFrame {
         setResizable(false);
         
         sesion =  new InicioDeSesion();
+        registro = new Registro();
         diagnostico2 = new Diagnostico2();
         diagnostico3 = new Diagnostico3();
         diagnostico5 = new Diagnostico5();
@@ -45,11 +47,14 @@ public class Optimizate extends javax.swing.JFrame {
         
        
         sesion.setBounds(30,50,562,415);
+        registro.setBounds(30,50,562,370);
         diagnostico2.setBounds(30,50,562,370);
         diagnostico3.setBounds(30,50,562,370);
         diagnostico5.setBounds(30,50,562,370);
         Pprincipal.setBounds(30,50,581,405);
-       
+        
+        registro.setVisible(false);
+        
         diagnostico2.setVisible(false);
         diagnostico3.setVisible(false);
         diagnostico5.setVisible(false);
@@ -58,6 +63,7 @@ public class Optimizate extends javax.swing.JFrame {
         
         
         add(sesion);
+        add(registro);
         
         add(diagnostico2);
         add(diagnostico3);
@@ -79,7 +85,7 @@ private class InicioDeSesion extends Sesion implements ActionListener{
         Entra.addActionListener(this);
         Siguiente.addActionListener(this);
         Anterior.addActionListener(this);
- 
+        RegistroBoton.addActionListener(this);
         
     }
     
@@ -92,6 +98,9 @@ private class InicioDeSesion extends Sesion implements ActionListener{
         if(e.getSource()==Entra){
             EntraActionPerformed(e);
         
+        }if(e.getSource()== RegistroBoton){
+
+            RegistroBotonActionPerformed(e);
         }
        
     }
@@ -291,6 +300,17 @@ private class InicioDeSesion extends Sesion implements ActionListener{
         repaint();
         
     }
+    private void RegistroBotonActionPerformed(java.awt.event.ActionEvent evt){
+        
+        sesion.setVisible(false);
+        registro.setVisible(true);
+        revalidate();
+        repaint();
+        Siguiente.setLabel("Salir");
+        Siguiente.setVisible(true);
+        
+        
+    }
     private void AnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnteriorActionPerformed
         // TODO add your handling code here:
         
@@ -304,7 +324,7 @@ private class InicioDeSesion extends Sesion implements ActionListener{
             repaint();
             
         }else if(diagnostico3.isVisible()){
-            
+            System.out.println("SE EJECUTO 2.5");
             diagnostico3.setVisible(false);
             diagnostico2.setVisible(true);
             revalidate();
@@ -341,6 +361,7 @@ private class InicioDeSesion extends Sesion implements ActionListener{
             revalidate();
             repaint();
         }else if(diagnostico3.isVisible()){
+            System.out.println("SE EJECUTO 33");
             diagnostico3.setVisible(false);
             diagnostico5.setVisible(true);
             revalidate();
@@ -355,6 +376,15 @@ private class InicioDeSesion extends Sesion implements ActionListener{
             System.out.println(Pprincipal.getBounds());
             revalidate();
             repaint();
+        }else if(registro.isVisible()){
+            System.out.println("ENTRO");
+            registro.setVisible(false);
+            Siguiente.setLabel("Siguiente");
+            Siguiente.setVisible(false);
+            sesion.setVisible(true);
+            revalidate();
+            repaint();
+            
         }
     }//GEN-LAST:event_SiguienteActionPerformed
 
