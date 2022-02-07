@@ -31,14 +31,14 @@ public class Diagnostico3 extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        Arrastrador_hrs1 = new javax.swing.JSlider();
-        Entrada_hrs1 = new javax.swing.JLabel();
+        CelularSlider = new javax.swing.JSlider();
         jLabel4 = new javax.swing.JLabel();
-        Arrastrador_hrs2 = new javax.swing.JSlider();
-        Entrada_hrs2 = new javax.swing.JLabel();
+        ComputadorSlider = new javax.swing.JSlider();
         jLabel5 = new javax.swing.JLabel();
-        Arrastrador_hrs3 = new javax.swing.JSlider();
-        Entrada_hrs5 = new javax.swing.JLabel();
+        ElectrodomesticosSlider = new javax.swing.JSlider();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -54,85 +54,90 @@ public class Diagnostico3 extends javax.swing.JPanel {
         jLabel6.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
         jLabel6.setText("¿Cuantas horas diarias crees que usas los electrodomesticos que señalaste?");
 
-        Arrastrador_hrs1.setMajorTickSpacing(2);
-        Arrastrador_hrs1.setMaximum(24);
-        Arrastrador_hrs1.setMinorTickSpacing(1);
-        Arrastrador_hrs1.setPaintLabels(true);
-        Arrastrador_hrs1.setPaintTicks(true);
-        Arrastrador_hrs1.setSnapToTicks(true);
-        Arrastrador_hrs1.setValue(0);
-        Arrastrador_hrs1.addChangeListener(new javax.swing.event.ChangeListener() {
+        CelularSlider.setMajorTickSpacing(2);
+        CelularSlider.setMaximum(24);
+        CelularSlider.setMinorTickSpacing(1);
+        CelularSlider.setPaintLabels(true);
+        CelularSlider.setPaintTicks(true);
+        CelularSlider.setSnapToTicks(true);
+        CelularSlider.setValue(0);
+        CelularSlider.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                Arrastrador_hrs1StateChanged(evt);
+                CelularSliderStateChanged(evt);
             }
         });
 
-        Entrada_hrs1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        Arrastrador_hrs2.setMajorTickSpacing(2);
-        Arrastrador_hrs2.setMaximum(24);
-        Arrastrador_hrs2.setMinorTickSpacing(1);
-        Arrastrador_hrs2.setPaintLabels(true);
-        Arrastrador_hrs2.setPaintTicks(true);
-        Arrastrador_hrs2.setSnapToTicks(true);
-        Arrastrador_hrs2.setValue(0);
-        Arrastrador_hrs2.addChangeListener(new javax.swing.event.ChangeListener() {
+        ComputadorSlider.setMajorTickSpacing(2);
+        ComputadorSlider.setMaximum(24);
+        ComputadorSlider.setMinorTickSpacing(1);
+        ComputadorSlider.setPaintLabels(true);
+        ComputadorSlider.setPaintTicks(true);
+        ComputadorSlider.setSnapToTicks(true);
+        ComputadorSlider.setValue(0);
+        ComputadorSlider.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                Arrastrador_hrs2StateChanged(evt);
+                ComputadorSliderStateChanged(evt);
             }
         });
 
-        Entrada_hrs2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        Arrastrador_hrs3.setMajorTickSpacing(2);
-        Arrastrador_hrs3.setMaximum(24);
-        Arrastrador_hrs3.setMinorTickSpacing(1);
-        Arrastrador_hrs3.setPaintLabels(true);
-        Arrastrador_hrs3.setPaintTicks(true);
-        Arrastrador_hrs3.setSnapToTicks(true);
-        Arrastrador_hrs3.setValue(0);
-        Arrastrador_hrs3.addChangeListener(new javax.swing.event.ChangeListener() {
+        ElectrodomesticosSlider.setMajorTickSpacing(2);
+        ElectrodomesticosSlider.setMaximum(24);
+        ElectrodomesticosSlider.setMinorTickSpacing(1);
+        ElectrodomesticosSlider.setPaintLabels(true);
+        ElectrodomesticosSlider.setPaintTicks(true);
+        ElectrodomesticosSlider.setSnapToTicks(true);
+        ElectrodomesticosSlider.setValue(0);
+        ElectrodomesticosSlider.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                Arrastrador_hrs3StateChanged(evt);
+                ElectrodomesticosSliderStateChanged(evt);
             }
         });
 
-        Entrada_hrs5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel1.setText("Celular");
+
+        jLabel7.setText("Computador");
+
+        jLabel8.setText("Electrodomesticos");
+        jLabel8.setToolTipText("Suma toda las horas de los electrodomesticos");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
+                        .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
-                            .addComponent(jLabel4))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(166, 166, 166)
-                                .addComponent(Entrada_hrs1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Arrastrador_hrs2, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Arrastrador_hrs1, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Arrastrador_hrs3, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(159, 159, 159)
-                                .addComponent(Entrada_hrs5, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(164, 164, 164)
-                                .addComponent(Entrada_hrs2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(69, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jSeparator1)
+                                .addGap(31, 31, 31)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel3)
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
+                                    .addComponent(jLabel4))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(ComputadorSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(CelularSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(ElectrodomesticosSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(182, 182, 182)
+                                        .addComponent(jLabel8))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(214, 214, 214)
+                                        .addComponent(jLabel1)))))
+                        .addGap(0, 62, Short.MAX_VALUE))
+                    .addComponent(jSeparator1))
                 .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(240, 240, 240)
+                .addComponent(jLabel7)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,11 +152,13 @@ public class Diagnostico3 extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(Arrastrador_hrs1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Entrada_hrs1, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(24, 24, 24)
+                        .addComponent(CelularSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(5, 5, 5)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel4)
@@ -159,53 +166,51 @@ public class Diagnostico3 extends javax.swing.JPanel {
                         .addComponent(jLabel5)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Arrastrador_hrs2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Entrada_hrs2, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Arrastrador_hrs3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ComputadorSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Entrada_hrs5, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 35, Short.MAX_VALUE))))
+                        .addComponent(ElectrodomesticosSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 25, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 536, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 558, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 395, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 366, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Arrastrador_hrs3StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Arrastrador_hrs3StateChanged
-        Entrada_hrs5.setText(Arrastrador_hrs3.getValue() + "hrs");
-    }//GEN-LAST:event_Arrastrador_hrs3StateChanged
+    private void ElectrodomesticosSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ElectrodomesticosSliderStateChanged
+        
+    }//GEN-LAST:event_ElectrodomesticosSliderStateChanged
 
-    private void Arrastrador_hrs2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Arrastrador_hrs2StateChanged
-        Entrada_hrs2.setText(Arrastrador_hrs2.getValue() + "hrs");
-    }//GEN-LAST:event_Arrastrador_hrs2StateChanged
+    private void ComputadorSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ComputadorSliderStateChanged
+        
+    }//GEN-LAST:event_ComputadorSliderStateChanged
 
-    private void Arrastrador_hrs1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Arrastrador_hrs1StateChanged
-        Entrada_hrs1.setText(Arrastrador_hrs1.getValue() + "hrs");
-    }//GEN-LAST:event_Arrastrador_hrs1StateChanged
+    private void CelularSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_CelularSliderStateChanged
+        
+    }//GEN-LAST:event_CelularSliderStateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JSlider Arrastrador_hrs1;
-    private javax.swing.JSlider Arrastrador_hrs2;
-    private javax.swing.JSlider Arrastrador_hrs3;
-    private javax.swing.JLabel Entrada_hrs1;
-    private javax.swing.JLabel Entrada_hrs2;
-    private javax.swing.JLabel Entrada_hrs5;
+    protected javax.swing.JSlider CelularSlider;
+    protected javax.swing.JSlider ComputadorSlider;
+    protected javax.swing.JSlider ElectrodomesticosSlider;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables

@@ -5,7 +5,9 @@ import java.awt.Button;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import javax.swing.SpinnerNumberModel;
 import javax.swing.JPanel;
+import java.awt.*;
 
 import Clases.Usuarios;
 import java.awt.event.KeyEvent;
@@ -21,11 +23,11 @@ public class Optimizate extends javax.swing.JFrame {
     
     
     InicioDeSesion sesion ;
-    Diagnostico2 diagnostico2;
-    Diagnostico5 diagnostico5;
-    Diagnostico4 diagnostico4;
-    Diagnostico3 diagnostico3;
-    Diagnostico1 diagnostico1;
+    Diagnostico_2 diagnostico2;
+    Diagnostico_5 diagnostico5;
+    Diagnostico_4 diagnostico4;
+    Diagnostico_3 diagnostico3;
+    Diagnostico_1 diagnostico1;
     PrincipalP Pprincipal;
     RegistroApp registro;
     Menu menu;
@@ -34,6 +36,7 @@ public class Optimizate extends javax.swing.JFrame {
     Usuarios ListaUsuarios;
     
     String[] UsuariosCombo;
+    String[] AparatosElegidos ;
    
 
     
@@ -55,6 +58,10 @@ public class Optimizate extends javax.swing.JFrame {
         UsuariosCombo = ListaUsuarios.getStrings();
         
         
+        AparatosElegidos = new String[3];
+        AparatosElegidos[0]="";
+        AparatosElegidos[1]="";
+        AparatosElegidos[2]="";
         
         
         
@@ -68,11 +75,13 @@ public class Optimizate extends javax.swing.JFrame {
         
         sesion =  new InicioDeSesion();
         registro = new RegistroApp();
-        diagnostico1 = new Diagnostico1();
-        diagnostico2 = new Diagnostico2();
-        diagnostico3 = new Diagnostico3();
-        diagnostico4 = new Diagnostico4();
-        diagnostico5 = new Diagnostico5();
+        diagnostico5 = new Diagnostico_5();
+        diagnostico2 = new Diagnostico_2();
+        diagnostico1 = new Diagnostico_1();
+        
+        diagnostico3 = new Diagnostico_3();
+        diagnostico4 = new Diagnostico_4();
+        
         Pprincipal = new PrincipalP();
         menu = new Menu();
         
@@ -435,8 +444,17 @@ public class Optimizate extends javax.swing.JFrame {
             revalidate();
             repaint();
         }else if(diagnostico4.isVisible()){
+            diagnostico5.AparatosCombo.removeAllItems();
+            for(int i = 0; i < 3; i++){
+                if(AparatosElegidos[i] != ""){
+                    diagnostico5.AparatosCombo.addItem(AparatosElegidos[i]);
+                }
+                
+            }
             diagnostico4.setVisible(false);
             diagnostico5.setVisible(true);
+            
+            
             revalidate();
             repaint();
             
@@ -467,6 +485,138 @@ public class Optimizate extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_SiguienteActionPerformed
+   private void ElectrodomesticosCheckActionPerformed(boolean x) {
+    
+        if(x){
+           System.out.println("Electrodomestico  seleccionado");
+
+           diagnostico2.ElectrodomesticosSpinner.setModel(new SpinnerNumberModel(1,1,4,1));
+           diagnostico3.ElectrodomesticosSlider.setMaximum(24);
+           AparatosElegidos[0] = "Electrodomesticos";
+  
+        }else{
+            diagnostico2.ElectrodomesticosSpinner.setModel(new SpinnerNumberModel(0,0,0,0));
+            diagnostico3.ElectrodomesticosSlider.setMaximum(0);
+            AparatosElegidos[0] = "";
+        }
+    }                                                      
+
+    private void CelularCheckActionPerformed(boolean x) {  
+       
+        System.out.println(x);
+        if(x){
+           System.out.println("Celular  seleccionado");
+
+           diagnostico2.CelularSpinner.setModel(new SpinnerNumberModel(1,1,5,1));
+           diagnostico3.CelularSlider.setMaximum(24);
+           AparatosElegidos[1] = "Celular";
+           
+        }else{
+            diagnostico2.CelularSpinner.setModel(new SpinnerNumberModel(0,0,0,0));
+            diagnostico3.CelularSlider.setMaximum(0);
+            AparatosElegidos[1] = "";
+        }
+
+    }                                            
+
+    private void ComputadorCheckActionPerformed( boolean x) {
+
+        System.out.println(x);
+        if(x){
+           System.out.println("Computador seleccionado");
+           
+           
+           diagnostico2.ComputadorSpinner.setModel(new SpinnerNumberModel(1,1,5,1));
+           diagnostico3.ComputadorSlider.setMaximum(24);
+           AparatosElegidos[2] = "Computador";
+           
+        }else{
+           diagnostico2.ComputadorSpinner.setModel(new SpinnerNumberModel(0,0,0,0));
+           diagnostico3.ComputadorSlider.setMaximum(0);
+           AparatosElegidos[2] = "";
+        }
+            
+
+    }
+private class Diagnostico_1 extends Diagnostico1 implements ActionListener{
+    
+    public boolean x1,x2,x3;
+    public Diagnostico_1(){
+       
+        
+        ElectrodomesticosCheck.addActionListener(this);
+        CelularCheck.addActionListener(this);
+        ComputadorCheck.addActionListener(this);
+        
+        
+
+        
+    }
+    
+    public void actionPerformed(ActionEvent e) {
+
+        
+        if(e.getSource()== ElectrodomesticosCheck){
+            boolean x = ElectrodomesticosCheck.isSelected();
+            ElectrodomesticosCheckActionPerformed(x);
+           
+        }
+        else if(e.getSource()==CelularCheck){
+            boolean x = CelularCheck.isSelected();
+            CelularCheckActionPerformed(x);
+        }else if(e.getSource()==ComputadorCheck){
+            boolean x = ComputadorCheck.isSelected();
+            ComputadorCheckActionPerformed(x);
+           
+        }
+ 
+     }
+    
+    
+    
+    
+}
+
+private class Diagnostico_2 extends Diagnostico2 {
+
+    public Diagnostico_2(){
+        SpinnerNumberModel nm = new SpinnerNumberModel();
+        nm.setMaximum(0);
+        nm.setMinimum(0);
+        nm.setStepSize(0);
+
+
+       ComputadorSpinner.setModel(nm);
+       ElectrodomesticosSpinner.setModel(nm);
+       CelularSpinner.setModel(nm);
+        
+    }
+
+    
+}
+private class Diagnostico_3 extends Diagnostico3{
+    
+    public Diagnostico_3(){
+        ElectrodomesticosSlider.setMaximum(0);
+        CelularSlider.setMaximum(0);
+        ComputadorSlider.setMaximum(0);
+    }
+    
+}
+    
+    
+    
+private class Diagnostico_4 extends Diagnostico4{
+    
+}
+private class Diagnostico_5 extends Diagnostico5{
+    
+    public Diagnostico_5(){
+        AparatosCombo.removeAllItems();
+    }
+    
+}
+    
 private class PrincipalP extends PantallaPrincipal implements ActionListener{
     
         

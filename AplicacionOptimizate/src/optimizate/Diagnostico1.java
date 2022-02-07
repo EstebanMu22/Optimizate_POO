@@ -31,11 +31,11 @@ public class Diagnostico1 extends javax.swing.JPanel {
         jSeparator3 = new javax.swing.JSeparator();
         icon_1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        ElectrodomesticosCheck = new javax.swing.JCheckBox();
         icon_2 = new javax.swing.JLabel();
-        jCheckBox2 = new javax.swing.JCheckBox();
+        CelularCheck = new javax.swing.JCheckBox();
         icon_3 = new javax.swing.JLabel();
-        jCheckBox3 = new javax.swing.JCheckBox();
+        ComputadorCheck = new javax.swing.JCheckBox();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -53,10 +53,10 @@ public class Diagnostico1 extends javax.swing.JPanel {
 
         jLabel1.setText("Electrodomésticos");
 
-        jCheckBox1.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        ElectrodomesticosCheck.setBackground(new java.awt.Color(255, 255, 255));
+        ElectrodomesticosCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                ElectrodomesticosCheckActionPerformed(evt);
             }
         });
 
@@ -65,10 +65,10 @@ public class Diagnostico1 extends javax.swing.JPanel {
         icon_2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
         icon_2.setPreferredSize(new java.awt.Dimension(110, 117));
 
-        jCheckBox2.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+        CelularCheck.setBackground(new java.awt.Color(255, 255, 255));
+        CelularCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
+                CelularCheckActionPerformed(evt);
             }
         });
 
@@ -77,10 +77,10 @@ public class Diagnostico1 extends javax.swing.JPanel {
         icon_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         icon_3.setPreferredSize(new java.awt.Dimension(110, 117));
 
-        jCheckBox3.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
+        ComputadorCheck.setBackground(new java.awt.Color(255, 255, 255));
+        ComputadorCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox3ActionPerformed(evt);
+                ComputadorCheckActionPerformed(evt);
             }
         });
 
@@ -107,21 +107,21 @@ public class Diagnostico1 extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(icon_1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox1)))
+                                .addComponent(ElectrodomesticosCheck)))
                         .addGap(32, 32, 32)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(icon_2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox2)))
+                                .addComponent(CelularCheck)))
                         .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(icon_3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox3)))))
+                                .addComponent(ComputadorCheck)))))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -148,7 +148,7 @@ public class Diagnostico1 extends javax.swing.JPanel {
                                     .addComponent(icon_2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(51, 51, 51)
-                                .addComponent(jCheckBox1))))
+                                .addComponent(ElectrodomesticosCheck))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,34 +157,34 @@ public class Diagnostico1 extends javax.swing.JPanel {
                                 .addComponent(icon_3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(54, 54, 54)
-                                .addComponent(jCheckBox2))
+                                .addComponent(CelularCheck))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(53, 53, 53)
-                                .addComponent(jCheckBox3)))))
+                                .addComponent(ComputadorCheck)))))
                 .addContainerGap(113, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void ElectrodomesticosCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ElectrodomesticosCheckActionPerformed
 
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_ElectrodomesticosCheckActionPerformed
 
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+    private void CelularCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CelularCheckActionPerformed
 
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
+    }//GEN-LAST:event_CelularCheckActionPerformed
 
-    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+    private void ComputadorCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComputadorCheckActionPerformed
 
-    }//GEN-LAST:event_jCheckBox3ActionPerformed
+    }//GEN-LAST:event_ComputadorCheckActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    protected javax.swing.JCheckBox CelularCheck;
+    protected javax.swing.JCheckBox ComputadorCheck;
+    protected javax.swing.JCheckBox ElectrodomesticosCheck;
     private javax.swing.JLabel icon_1;
     private javax.swing.JLabel icon_2;
     private javax.swing.JLabel icon_3;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
