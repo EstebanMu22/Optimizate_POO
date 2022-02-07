@@ -11,6 +11,7 @@ import Clases.Usuarios;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.IOException;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -26,11 +27,12 @@ public class Optimizate extends javax.swing.JFrame {
     PrincipalP Pprincipal;
     RegistroApp registro;
     Menu menu;
-    // jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sergio", "Andres", "Esteban", "Juan" }));
+   
     
+    Usuarios ListaUsuarios;
     
-    
-    Usuarios ListaUsuarios = new Usuarios();
+    String[] UsuariosCombo;
+   
 
     
 
@@ -39,6 +41,19 @@ public class Optimizate extends javax.swing.JFrame {
      */
     public Optimizate() throws IOException, ClassNotFoundException {
  
+        try{
+            ListaUsuarios = recuperar();
+            System.out.println("Objeto leido");
+        }catch(Exception e){
+            ListaUsuarios = new Usuarios();
+            System.out.println("Objeto vacio");
+        }
+        ListaUsuarios.SetStrings();
+        
+        UsuariosCombo = ListaUsuarios.getStrings();
+        
+        
+        
         
         
         initComponents();
@@ -391,6 +406,8 @@ public class Optimizate extends javax.swing.JFrame {
             } catch (IOException ex) {
                 Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
             }
+            ListaUsuarios.SetStrings();
+            
             ListaUsuarios.VerNombresUsuarios();
             
             revalidate();
@@ -430,6 +447,9 @@ private class InicioDeSesion extends Sesion implements ActionListener{
         Anterior.addActionListener(this);
         RegistroBoton.addActionListener(this);
         
+        for(int i = 0; i<UsuariosCombo.length;i++){
+            ComboSesion.addItem(UsuariosCombo[i]);
+        }
     }
     
 
@@ -466,7 +486,7 @@ private class RegistroApp extends Registro implements ActionListener,KeyListener
         
         if (e.getSource()==CrearUsuario){
             nombre = Usuario.getText();
-            apodo = Usuario.getText();
+            apodo = Apodo.getText();
             edad =Integer.parseInt(Edad.getText());
             try{
                 ListaUsuarios.CrearUsuario(nombre,apodo,edad);
