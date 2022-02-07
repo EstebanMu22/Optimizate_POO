@@ -24,6 +24,7 @@ public class Optimizate extends javax.swing.JFrame {
     Diagnostico2 diagnostico2;
     Diagnostico5 diagnostico5;
     Diagnostico3 diagnostico3;
+    Diagnostico1 diagnostico1;
     PrincipalP Pprincipal;
     RegistroApp registro;
     Menu menu;
@@ -59,13 +60,14 @@ public class Optimizate extends javax.swing.JFrame {
         initComponents();
         Anterior.setVisible(false);
         Siguiente.setVisible(false);
-        
+        BotonMenu.setVisible(false);
         
         setBounds(30,50,650,530);
         setResizable(false);
         
         sesion =  new InicioDeSesion();
         registro = new RegistroApp();
+        diagnostico1 = new Diagnostico1();
         diagnostico2 = new Diagnostico2();
         diagnostico3 = new Diagnostico3();
         diagnostico5 = new Diagnostico5();
@@ -76,6 +78,7 @@ public class Optimizate extends javax.swing.JFrame {
        
         sesion.setBounds(30,50,562,415);
         registro.setBounds(30,50,562,370);
+        diagnostico1.setBounds(30,50,562,370);
         diagnostico2.setBounds(30,50,562,370);
         diagnostico3.setBounds(30,50,562,370);
         diagnostico5.setBounds(30,50,562,370);
@@ -84,6 +87,7 @@ public class Optimizate extends javax.swing.JFrame {
         
         registro.setVisible(false);
         
+        diagnostico1.setVisible(false);
         diagnostico2.setVisible(false);
         diagnostico3.setVisible(false);
         diagnostico5.setVisible(false);
@@ -94,7 +98,7 @@ public class Optimizate extends javax.swing.JFrame {
         
         add(sesion);
         add(registro);
-        
+        add(diagnostico1);
         add(diagnostico2);
         add(diagnostico3);
         add(diagnostico5);
@@ -145,6 +149,7 @@ public class Optimizate extends javax.swing.JFrame {
         jSeparator7 = new javax.swing.JSeparator();
         Anterior = new java.awt.Button();
         Siguiente = new java.awt.Button();
+        BotonMenu = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -266,6 +271,8 @@ public class Optimizate extends javax.swing.JFrame {
             }
         });
 
+        BotonMenu.setText("Menu");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -275,30 +282,38 @@ public class Optimizate extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(Anterior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BotonMenu)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(Anterior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 438, Short.MAX_VALUE)
-                        .addComponent(Siguiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Siguiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BotonMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 18, Short.MAX_VALUE))
+                        .addGap(0, 3, Short.MAX_VALUE))
                     .addComponent(jSeparator7)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Siguiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Anterior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(Anterior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(1, 1, 1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -311,7 +326,8 @@ public class Optimizate extends javax.swing.JFrame {
         Anterior.setVisible(true);
         Siguiente.setVisible(true);
         sesion.setVisible(false);
-        diagnostico2.setVisible(true);
+        diagnostico1.setVisible(true);
+        
         revalidate();
         repaint();
         
@@ -350,14 +366,21 @@ public class Optimizate extends javax.swing.JFrame {
             
         }
         
-        else if(diagnostico2.isVisible()==true && diagnostico5.isVisible()== false && sesion.isVisible()== false){
+        else if(diagnostico1.isVisible()==true){
            
             System.out.println("SE EJECUTO 2");
-            diagnostico5.setVisible(false);
-            diagnostico2.setVisible(false);
+            
+            diagnostico1.setVisible(false);
             sesion.setVisible(true);
             Anterior.setVisible(false);
             Siguiente.setVisible(false);
+            revalidate();
+            repaint();
+            
+            
+        }else if(diagnostico2.isVisible()){
+            diagnostico2.setVisible(false);
+            diagnostico1.setVisible(true);
             revalidate();
             repaint();
             
@@ -370,14 +393,21 @@ public class Optimizate extends javax.swing.JFrame {
     private void SiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SiguienteActionPerformed
         // TODO add your handling code here:
         
-        
-        if(diagnostico2.isVisible()){
+        if (diagnostico1.isVisible()){
+            diagnostico1.setVisible(false);
+            diagnostico2.setVisible(true);
+            revalidate();
+            repaint();
+            
+        }
+        else if(diagnostico2.isVisible()){
             System.out.println("SE EJECUTO 3");
             
             diagnostico2.setVisible(false);
             diagnostico3.setVisible(true);
             revalidate();
             repaint();
+        
         }else if(diagnostico3.isVisible()){
             System.out.println("SE EJECUTO 33");
             diagnostico3.setVisible(false);
@@ -424,14 +454,14 @@ private class PrincipalP extends PantallaPrincipal implements ActionListener{
     
         
     public PrincipalP(){
-        LogoMenu.addActionListener(this);
+        
         
         
     }
        
     private void LogoMenuActionPerformed(java.awt.event.ActionEvent evt) {  
         menu.setVisible(true);
-        LogoMenu.setVisible(false);
+       
     }                                       
 
     @Override
@@ -584,6 +614,7 @@ private class RegistroApp extends Registro implements ActionListener,KeyListener
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button Anterior;
+    private javax.swing.JButton BotonMenu;
     private java.awt.Button Siguiente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
