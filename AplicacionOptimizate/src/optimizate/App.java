@@ -25,6 +25,7 @@ public class App {
         
         
         app.setVisible(true);
+        app.ListaUsuarios.VerApodosUsuarios();
         
         
         

@@ -407,6 +407,11 @@ public class Optimizate extends javax.swing.JFrame {
                 Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
             }
             ListaUsuarios.SetStrings();
+            sesion.ComboSesion.removeAllItems();
+            UsuariosCombo = ListaUsuarios.getStrings();
+            for(int i = 0; i<UsuariosCombo.length;i++){
+                sesion.ComboSesion.addItem(UsuariosCombo[i]);
+            }
             
             ListaUsuarios.VerNombresUsuarios();
             
