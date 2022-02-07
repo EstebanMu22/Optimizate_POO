@@ -23,6 +23,7 @@ public class Optimizate extends javax.swing.JFrame {
     InicioDeSesion sesion ;
     Diagnostico2 diagnostico2;
     Diagnostico5 diagnostico5;
+    Diagnostico4 diagnostico4;
     Diagnostico3 diagnostico3;
     Diagnostico1 diagnostico1;
     PrincipalP Pprincipal;
@@ -70,6 +71,7 @@ public class Optimizate extends javax.swing.JFrame {
         diagnostico1 = new Diagnostico1();
         diagnostico2 = new Diagnostico2();
         diagnostico3 = new Diagnostico3();
+        diagnostico4 = new Diagnostico4();
         diagnostico5 = new Diagnostico5();
         Pprincipal = new PrincipalP();
         menu = new Menu();
@@ -81,6 +83,7 @@ public class Optimizate extends javax.swing.JFrame {
         diagnostico1.setBounds(30,50,562,370);
         diagnostico2.setBounds(30,50,562,370);
         diagnostico3.setBounds(30,50,562,370);
+        diagnostico4.setBounds(30,50,562,370);
         diagnostico5.setBounds(30,50,562,370);
         Pprincipal.setBounds(30,50,581,405);
         menu.setBounds(0,0,187,300);
@@ -90,6 +93,7 @@ public class Optimizate extends javax.swing.JFrame {
         diagnostico1.setVisible(false);
         diagnostico2.setVisible(false);
         diagnostico3.setVisible(false);
+        diagnostico4.setVisible(false);
         diagnostico5.setVisible(false);
         Pprincipal.setVisible(false);
         menu.setVisible(false);
@@ -101,6 +105,7 @@ public class Optimizate extends javax.swing.JFrame {
         add(diagnostico1);
         add(diagnostico2);
         add(diagnostico3);
+        add(diagnostico4);
         add(diagnostico5);
         add(Pprincipal);
         Pprincipal.add(menu);
@@ -352,7 +357,7 @@ public class Optimizate extends javax.swing.JFrame {
             
             System.out.println("SE EJECUTO 1");
             diagnostico5.setVisible(false);
-            diagnostico3.setVisible(true);
+            diagnostico4.setVisible(true);
             sesion.setVisible(false);
             revalidate();
             repaint();
@@ -364,9 +369,14 @@ public class Optimizate extends javax.swing.JFrame {
             revalidate();
             repaint();
             
-        }
+        }else if(diagnostico4.isVisible()){
+            diagnostico4.setVisible(false);
+            diagnostico3.setVisible(true);
+            revalidate();
+            repaint();
         
-        else if(diagnostico1.isVisible()==true){
+        
+        }else if(diagnostico1.isVisible()==true){
            
             System.out.println("SE EJECUTO 2");
             
@@ -411,7 +421,7 @@ public class Optimizate extends javax.swing.JFrame {
         }else if(diagnostico3.isVisible()){
             System.out.println("SE EJECUTO 33");
             diagnostico3.setVisible(false);
-            diagnostico5.setVisible(true);
+            diagnostico4.setVisible(true);
             revalidate();
             repaint();
         }
@@ -424,6 +434,13 @@ public class Optimizate extends javax.swing.JFrame {
             System.out.println(Pprincipal.getBounds());
             revalidate();
             repaint();
+        }else if(diagnostico4.isVisible()){
+            diagnostico4.setVisible(false);
+            diagnostico5.setVisible(true);
+            revalidate();
+            repaint();
+            
+            
         }else if(registro.isVisible()){
             System.out.println("ENTRO");
             registro.setVisible(false);
