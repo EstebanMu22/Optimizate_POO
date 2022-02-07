@@ -13,7 +13,7 @@ import javax.swing.ImageIcon;
  *
  * @author sergio andres
  */
-class Lavadora extends Electrodomesticos{
+public class Lavadora extends Electrodomesticos{
     
     
     private final double EnergiaGastadaMes = 4.4;

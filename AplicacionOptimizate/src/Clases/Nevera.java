@@ -6,7 +6,7 @@ import java.awt.Toolkit;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
-class Nevera extends Electrodomesticos{
+public class Nevera extends Electrodomesticos{
     
     private final double EnergiaGastadaMes = 44.64;
 

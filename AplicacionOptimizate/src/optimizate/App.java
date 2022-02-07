@@ -3,8 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package optimizate;
+import Clases.PersistenciaObjetos;
+import Clases.Usuario;
 import java.io.*;
 import java.io.Serializable;
+import Clases.Usuarios;
 
 /**
  *
@@ -12,15 +15,21 @@ import java.io.Serializable;
  */
 public class App {
     
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException, ClassNotFoundException{
+  
+        
+       
+        
         
         Optimizate app = new Optimizate();
         
+        
         app.setVisible(true);
-        System.out.println(app.getBounds());
+        
         
         
         
     }
+
     
 }

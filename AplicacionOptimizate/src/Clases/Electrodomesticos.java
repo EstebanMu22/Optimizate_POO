@@ -10,7 +10,7 @@ import javax.swing.ImageIcon;
 
 
 
-class Electrodomesticos extends DiagnosticoGeneral{
+public class Electrodomesticos extends DiagnosticoGeneral{
     
     //Electrodomesticos
     

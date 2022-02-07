@@ -9,7 +9,7 @@ import java.awt.Toolkit;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
-class Microondas extends Electrodomesticos{
+public class Microondas extends Electrodomesticos{
     
     
     private final double EnergiaGastadaMes = 3;

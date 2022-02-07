@@ -4,38 +4,64 @@
  */
 package Clases;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
  * @author sergio andres
  */
-class Usuarios implements Serializable{
+public class Usuarios implements Serializable{
     
-    private String nombre;
-    private String apodo;
-    private int edad;
+    protected String nombre;
+    protected String apodo;
+    protected int edad;
+    private HashMap<String,Usuario> usuarios = new HashMap<>();;
     
-    private ArrayList<Usuario> usuarios;
+    Usuario prueba;
+    
+  
     
     public Usuarios(){
-        this("","",0);
         
     }
     
-    public Usuarios(String nombre,String apodo, int edad){
-        this.nombre = nombre;
-        this.apodo = apodo;
-        this.edad = edad;
-        usuarios = new ArrayList<>();
+    public void CrearUsuario(String nombre, String apodo, int edad){
+        
+        Usuario usuario = new Usuario(nombre,apodo,edad);
+        
+      
+        usuarios.put(nombre, usuario);
+              
+       
+        
+        
+        
+        //usuarios.put(tamañoS, usuario);
+       
     }
+    public void AjustarConsejos(Usuario u,boolean Ahorra, boolean Recibo, boolean UsarMenos, boolean Ahorradores,boolean enfocarse, int Exigencia,int HorasDeUso,int NumeroAparatos){
+        
+        u.ConsejosUsuario(Ahorra,Recibo,UsarMenos,Ahorradores,enfocarse,Exigencia,HorasDeUso,NumeroAparatos);
+    }
+    public void VerNombresUsuarios(){
+        for(Map.Entry m : usuarios.entrySet()){   
+            Usuario u =(Usuario) m.getValue();
+            System.out.println(m.getKey()+" "+u.GetNombre());    
+        }  
+    }
+    public void VerApodosUsuarios(){
+        for(Map.Entry m : usuarios.entrySet()){   
+            Usuario u =(Usuario) m.getValue();
+            System.out.println(m.getKey()+" "+u.GetApodo());    
+        }
+        
+    }
+    
+   
     
     public String GetNombre(){
         return nombre;
@@ -46,37 +72,8 @@ class Usuarios implements Serializable{
     public int GetEdad(){
         return edad;
     }
-}
+    
 
-class Usuario extends Usuarios{
-    
-    DiagnosticoGeneral diagnostico;
-    
-    
-    public Usuario(String nombre, String apodo, int edad,boolean Ahorra, boolean Recibo, boolean UsarMenos, boolean Ahorradores,boolean enfocarse, int Exigencia,int HorasDeUso,int NumeroAparatos){
-        super(nombre,apodo,edad);
-        
-        diagnostico = new DiagnosticoGeneral( Ahorra, Recibo, UsarMenos, Ahorradores,enfocarse,Exigencia, HorasDeUso, NumeroAparatos);
-        
-        
-    }
 }
 
 
-
-
-class Persistencia{
-    
-    public void guardar(Usuarios x) throws FileNotFoundException, IOException{
-        ObjectOutputStream guardar = new ObjectOutputStream(new FileOutputStream("Usuario.obj"));
-        guardar.writeObject(x);
-        guardar.close();
-    }
-    public Usuarios recuperar() throws IOException, ClassNotFoundException{
-        ObjectInputStream recuperar = new ObjectInputStream(new FileInputStream("Usuario.obj"));
-         Usuarios usuario = (Usuarios) recuperar.readObject();
-         recuperar.close();
-         return usuario;
-    }
-    
-}
