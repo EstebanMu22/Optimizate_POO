@@ -71,7 +71,10 @@ public class Informacion extends javax.swing.JFrame {
         Inf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         Inf.setPreferredSize(new java.awt.Dimension(540, 399));
 
+        Contenido.setBackground(new java.awt.Color(255, 255, 255));
         Contenido.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        text_contenido.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout ContenidoLayout = new javax.swing.GroupLayout(Contenido);
         Contenido.setLayout(ContenidoLayout);

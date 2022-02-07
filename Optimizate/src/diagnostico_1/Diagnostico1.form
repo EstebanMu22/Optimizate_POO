@@ -287,7 +287,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Electrodomesticos"/>
+            <Property name="text" type="java.lang.String" value="Electrodom&#xe9;sticos"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="icon_1">

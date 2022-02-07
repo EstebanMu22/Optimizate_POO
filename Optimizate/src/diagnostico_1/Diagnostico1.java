@@ -79,7 +79,7 @@ public class Diagnostico1 extends javax.swing.JFrame {
 
         text2.setText("Selecciona los aparatos electrónicos que hay en tu hogar:");
 
-        jLabel1.setText("Electrodomesticos");
+        jLabel1.setText("Electrodomésticos");
 
         icon_1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         icon_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/graphics/microwave.png"))); // NOI18N
