@@ -61,7 +61,7 @@ public class MicroondasPantalla extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("<html><b>Tareas Pendientes Bombillos</b></html>");
+        jLabel1.setText("<html><b>Tareas Pendientes Microondas</b></html>");
 
         MicroondasKV.setText("Energia Gastada: 500 kv");
 

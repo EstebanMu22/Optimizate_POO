@@ -80,32 +80,32 @@ public class Electrodomesticos extends DiagnosticoGeneral implements Serializabl
         
                         
     };
-    String[][] ConsejosModeradosLavadora = {
+    public String[][] ConsejosModeradosLavadora = {
         {"Utiliza un buen detergente que use menos agua","10"},
         {"Lava con agua fria","8"},
         {"Usa programas cortos para lavar tu ropa de diario","8"},
         {"Saca tu ropa apenas termine de lavar, asi no se arruga y evitas usar la plancha","3"}
     };
     
-    String[][] ConsejosComplejosLavadora ={
+    public String[][] ConsejosComplejosLavadora ={
         {"Si tu lavadora es muy antigua, consigue una eficiente","20"},
         {"Manten la lavadora en buenas condiciones","12"},
         {"Limpia el fitro","10"}
          
     };
-    String[][] ConsejosFacilesMicroondas ={
+    public String[][] ConsejosFacilesMicroondas ={
         {"No la abras antes de tiempo","3"},
         {"Calienta varias cosas","3"},
         {"Bajale a los minutos de calentamiento","2"},
                                  
     };
-    String[][] ConsejosModeradosMicroondas = {
+    public String[][] ConsejosModeradosMicroondas = {
         {"Usa Recipientes Circulares","10"},
         {"Limpia el microondas","8"},
         {"Comprueba que el microondas este en buen estado","5"}
     };
     
-    String[][] ConsejosComplejosMicroondas ={
+    public String[][] ConsejosComplejosMicroondas ={
         {"Compra papel Stretch para calentar tu comida","15"},
         {"Usa vidrio Pirex para calentar tu comida","12"},
         {"Ayuda a concientizar sobre estas practicas","5"}

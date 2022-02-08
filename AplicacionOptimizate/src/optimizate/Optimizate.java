@@ -386,630 +386,8 @@ public class Optimizate extends javax.swing.JFrame {
                 Anterior.setLabel("Anterior");
                 try{
                     
-                    
-                    
-                    diagnosticoUsuario = usuario.GetDiagnostico();
-                    electrodomesticosUsuario = diagnosticoUsuario.GetElectrodomesticos();
-
-                    ConsejosUsuario = electrodomesticosUsuario.getConsejosElectrodomesticos();
-
-                    ConsejosLavadora =  ConsejosUsuario.get("Lavadora");
-
-                    System.out.println(ConsejosLavadora);
-                    ConsejosBombillo = (ArrayList) ConsejosUsuario.get("Bombillo");
-                    System.out.println(ConsejosBombillo);
-                    
-                    ConsejosNevera = (ArrayList)ConsejosUsuario.get("Nevera");
-                    System.out.println(ConsejosNevera);
-                    ConsejosMicroondas = (ArrayList)ConsejosUsuario.get("Microondas");
-                    System.out.println(ConsejosMicroondas);
-                    
-                    PprincipalBombillos.BombilloKV.setText("Energia gastada "+(electrodomesticosUsuario.GetBombilloKV()*2)+" Kv");
-                    PprincipalNevera.NeveraKV.setText("Energia gastada "+(electrodomesticosUsuario.GetNeveraKV()*2)+" Kv");
-                    
-                    String consejos2[][] = electrodomesticosUsuario.ConsejosFacilesBombillo;
-                    String consejos3[][] = electrodomesticosUsuario.ConsejosComplejosBombillo;
-                    String consejos4[][] = electrodomesticosUsuario.ConsejosModeradosBombillo;
-                    
-                    String consejos5[][] = electrodomesticosUsuario.ConsejosFacilesNevera;
-                    String consejos6[][] = electrodomesticosUsuario.ConsejosComplejosNevera;
-                    String consejos7[][] = electrodomesticosUsuario.ConsejosModeradosNevera;
-                    
-                    
-                    
-                    
-                    if(electrodomesticosUsuario.ObtenerEnfocarse()){
-                        
-                       PprincipalBombillos.Consejo1Bombillo.setText(usuario.ConsejosActualesBombillo.get(0));
-                       PprincipalBombillos.Consejo2Bombillo.setText(usuario.ConsejosActualesBombillo.get(1));
-                       PprincipalBombillos.Consejo3Bombillo.setText(usuario.ConsejosActualesBombillo.get(2));
-                       PprincipalBombillos.Consejo4Bombillo.setText(usuario.ConsejosActualesBombillo.get(3));
-                       PprincipalBombillos.Consejo5Bombillo.setText(usuario.ConsejosActualesBombillo.get(4));
-                       
-                       PprincipalNevera.Consejo1Nevera.setText(usuario.ConsejosActualesNevera.get(0));
-                       PprincipalNevera.Consejo2Nevera.setText(usuario.ConsejosActualesNevera.get(1));
-                       PprincipalNevera.Consejo3Nevera.setText(usuario.ConsejosActualesNevera.get(2));
-                       PprincipalNevera.Consejo4Nevera.setText(usuario.ConsejosActualesNevera.get(3));
-                       PprincipalNevera.Consejo5Nevera.setText(usuario.ConsejosActualesNevera.get(4));
-                       
-                       PprincipalMicroondas.Consejo1Microondas.setText(usuario.ConsejosActualesMicroondas.get(0));
-                       PprincipalMicroondas.Consejo2Microondas.setText(usuario.ConsejosActualesMicroondas.get(1));
-                       PprincipalMicroondas.Consejo3Microondas.setText(usuario.ConsejosActualesMicroondas.get(2));
-                       PprincipalMicroondas.Consejo4Microondas.setText(usuario.ConsejosActualesMicroondas.get(3));
-                       PprincipalMicroondas.Consejo5Microondas.setText(usuario.ConsejosActualesMicroondas.get(4));
-                       
-                       PprincipalLavadora.Consejo1Lavadora.setText(usuario.ConsejosActualesLavadora.get(0));
-                       PprincipalLavadora.Consejo2Lavadora.setText(usuario.ConsejosActualesLavadora.get(1));
-                       PprincipalLavadora.Consejo3Lavadora.setText(usuario.ConsejosActualesLavadora.get(2));
-                       PprincipalLavadora.Consejo4Lavadora.setText(usuario.ConsejosActualesLavadora.get(3));
-                       PprincipalLavadora.Consejo5Lavadora.setText(usuario.ConsejosActualesLavadora.get(4));
-                       
-                    }else{
-                       PprincipalBombillos.Consejo1Bombillo.setText(usuario.ConsejosActualesBombillo.get(0));
-                       PprincipalBombillos.Consejo2Bombillo.setText(usuario.ConsejosActualesBombillo.get(1));
-                       PprincipalBombillos.Consejo3Bombillo.setText(usuario.ConsejosActualesBombillo.get(2));
-                       PprincipalBombillos.Consejo4Bombillo.setText(usuario.ConsejosActualesBombillo.get(3));
-                       PprincipalBombillos.Consejo5Bombillo.setText(usuario.ConsejosActualesBombillo.get(4));
-                       PprincipalBombillos.Consejo4Bombillo.setVisible(false);
-                       PprincipalBombillos.Consejo5Bombillo.setVisible(false);
-                       PprincipalBombillos.Separador4.setVisible(false);
-                       PprincipalBombillos.Separador5.setVisible(false);
-                       PprincipalBombillos.Consejo4BombilloE.setVisible(false);
-                       PprincipalBombillos.Consejo5BombilloE.setVisible(false);
-                       
-                       
-                       PprincipalNevera.Consejo1Nevera.setText(usuario.ConsejosActualesNevera.get(0));
-                       PprincipalNevera.Consejo2Nevera.setText(usuario.ConsejosActualesNevera.get(1));
-                       PprincipalNevera.Consejo3Nevera.setText(usuario.ConsejosActualesNevera.get(2));
-                       PprincipalNevera.Consejo4Nevera.setText(usuario.ConsejosActualesNevera.get(3));
-                       PprincipalNevera.Consejo5Nevera.setText(usuario.ConsejosActualesNevera.get(4));
-                       PprincipalNevera.Consejo4Nevera.setVisible(false);
-                       PprincipalNevera.Consejo5Nevera.setVisible(false);
-                       PprincipalNevera.Separador4.setVisible(false);
-                       PprincipalNevera.Separador5.setVisible(false);
-                       PprincipalNevera.Consejo4NeveraE.setVisible(false);
-                       PprincipalNevera.Consejo5NeveraE.setVisible(false);
-                       
-                       
-                       PprincipalMicroondas.Consejo1Microondas.setText(usuario.ConsejosActualesMicroondas.get(0));
-                       PprincipalMicroondas.Consejo2Microondas.setText(usuario.ConsejosActualesMicroondas.get(1));
-                       PprincipalMicroondas.Consejo3Microondas.setText(usuario.ConsejosActualesMicroondas.get(2));
-                       PprincipalMicroondas.Consejo4Microondas.setText(usuario.ConsejosActualesMicroondas.get(3));
-                       PprincipalMicroondas.Consejo5Microondas.setText(usuario.ConsejosActualesMicroondas.get(4));
-                       PprincipalMicroondas.Consejo4Microondas.setVisible(false);
-                       PprincipalMicroondas.Consejo5Microondas.setVisible(false);
-                       PprincipalMicroondas.Separador4.setVisible(false);
-                       PprincipalMicroondas.Separador5.setVisible(false);
-                       PprincipalMicroondas.Consejo4MicroondasE.setVisible(false);
-                       PprincipalMicroondas.Consejo5MicroondasE.setVisible(false);
-                       
-                       PprincipalLavadora.Consejo1Lavadora.setText(usuario.ConsejosActualesLavadora.get(0));
-                       PprincipalLavadora.Consejo2Lavadora.setText(usuario.ConsejosActualesLavadora.get(1));
-                       PprincipalLavadora.Consejo3Lavadora.setText(usuario.ConsejosActualesLavadora.get(2));
-                       PprincipalLavadora.Consejo4Lavadora.setText(usuario.ConsejosActualesLavadora.get(3));
-                       PprincipalLavadora.Consejo5Lavadora.setText(usuario.ConsejosActualesLavadora.get(4));
-                       PprincipalLavadora.Consejo4Lavadora.setVisible(false);
-                       PprincipalLavadora.Consejo5Lavadora.setVisible(false);
-                       PprincipalLavadora.Separador4.setVisible(false);
-                       PprincipalLavadora.Separador5.setVisible(false);
-                       PprincipalLavadora.Consejo4LavadoraE.setVisible(false);
-                       PprincipalLavadora.Consejo5LavadoraE.setVisible(false);
-                       
-                       
-                  
-                    }
-                    
-                    Double EnergiaAhorrar = 0.0d;
-                    DecimalFormat formato = new DecimalFormat("#.00");
-         
-                    for(int i = 0; i<5;i++){
-                        String s =  usuario.ConsejosActualesBombillo.get(i);
-                        boolean x = s.equals(consejos4[0][0]);
-                        boolean y = s.equals(consejos4[1][0]);
-                        if(x || y){
-                            
-                            
-                            System.out.println("ENtro");
-                           if(PprincipalBombillos.Consejo1Bombillo.getText().equals(s)){
-                               if (x){
-                                 EnergiaAhorrar+=  (Double.valueOf(consejos4[0][1])/100) *21.6 ;
-                                 
-                                 PprincipalBombillos.Consejo1BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[1][1])/100)*21.6))+"Kv");   
-                               }else if (y){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos4[1][1])/100)*21.6;
-                                   PprincipalBombillos.Consejo1BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[1][1])/100)*21.6))+"Kv"); 
-                                }
-                                 
-                            }
-                           if(PprincipalBombillos.Consejo2Bombillo.getText().equals(s)){
-                               if(x){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos4[0][1])/100)*21.6;
-                                   PprincipalBombillos.Consejo2BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[0][1])/100)*21.6))+"Kv");
-                               }else if(y){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos4[1][1])/100)*21.6;
-                                   PprincipalBombillos.Consejo2BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[1][1])/100)*21.6))+"Kv");
-                                   
-                               }
-                               
-                            }
-                            if(PprincipalBombillos.Consejo3Bombillo.getText().equals(s)){
-                                if(x){
-                                    EnergiaAhorrar+=  (Double.valueOf(consejos4[0][1])/100)*21.6;
-                                    PprincipalBombillos.Consejo3BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[0][1])/100)*21.6))+"Kv");
-                                }else if(y){
-                                    EnergiaAhorrar+=  (Double.valueOf(consejos4[1][1])/100)*21.6;
-                                    PprincipalBombillos.Consejo3BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[1][1])/100)*21.6))+"Kv");
-                                }
-                               
-                            }
-                            
-                            if(PprincipalBombillos.Consejo4Bombillo.getText().equals(s)){
-                               if(x){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos4[0][1])/100)*21.6;
-                                   PprincipalBombillos.Consejo4BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[0][1])/100)*21.6))+"Kv");
-                               }else if(y){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos4[1][1])/100)*21.6;
-                                   PprincipalBombillos.Consejo4BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[1][1])/100)*21.6))+"Kv");
-                               }
-                               
-                            }
-                            if(PprincipalBombillos.Consejo5Bombillo.getText().equals(s)){
-                                
-                               if(x){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos4[0][1])/100)*21.6;
-                                 PprincipalBombillos.Consejo5BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[0][1])/100)*21.6))+"Kv");  
-                               }else if(y){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos4[1][1])/100)*21.6;
-                                   PprincipalBombillos.Consejo5BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[1][1])/100)*21.6))+"Kv");
-                               }
-                               
-                            }
-                
-                        }
-                        
-                    }
-                    for(int i = 0; i<5;i++){
-                        String s =  usuario.ConsejosActualesBombillo.get(i);
-                        boolean x = s.equals(consejos3[0][0]);
-                        boolean y = s.equals(consejos3[1][0]);
-                        if(x || y){
-                            
-                            
-                            System.out.println("ENtro");
-                           if(PprincipalBombillos.Consejo1Bombillo.getText().equals(s)){
-                               if (x){
-                                   EnergiaAhorrar+= ( Double.valueOf(consejos3[0][1])/100)*21.6;
-                                 PprincipalBombillos.Consejo1BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos3[0][1])/100)*21.6))+"Kv");   
-                               }else if (y){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos3[1][1])/100)*21.6;
-                                   PprincipalBombillos.Consejo1BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos3[1][1])/100)*21.6))+"Kv"); 
-                                }
-                                 
-                            }
-                           if(PprincipalBombillos.Consejo2Bombillo.getText().equals(s)){
-                               if(x){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos3[0][1])/100)*21.6;
-                                   PprincipalBombillos.Consejo2BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos3[0][1])/100)*21.6))+"Kv");
-                               }else if(y){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos3[1][1])/100)*21.6;
-                                   PprincipalBombillos.Consejo2BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos3[1][1])/100)*21.6))+"Kv");
-                                   
-                               }
-                               
-                            }
-                            if(PprincipalBombillos.Consejo3Bombillo.getText().equals(s)){
-                                if(x){
-                                    EnergiaAhorrar+=  (Double.valueOf(consejos3[0][1])/100)*21.6;
-                                    PprincipalBombillos.Consejo3BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos3[0][1])/100)*21.6))+"Kv");
-                                }else if(y){
-                                    EnergiaAhorrar+=  (Double.valueOf(consejos3[1][1])/100)*21.6;
-                                    PprincipalBombillos.Consejo3BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos3[1][1])/100)*21.6))+"Kv");
-                                }
-                               
-                            }
-                            
-                            if(PprincipalBombillos.Consejo4Bombillo.getText().equals(s)){
-                               if(x){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos3[0][1])/100)*21.6;
-                                   PprincipalBombillos.Consejo4BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos3[0][1])/100)*21.6))+"Kv");
-                               }else if(y){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos3[1][1])/100)*21.6;
-                                   PprincipalBombillos.Consejo4BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos3[1][1])/100)*21.6))+"Kv");
-                               }
-                               
-                            }
-                            if(PprincipalBombillos.Consejo5Bombillo.getText().equals(s)){
-                                
-                               if(x){
-                                   EnergiaAhorrar+= (Double.valueOf(consejos3[0][1])/100)*21.6;
-                                 PprincipalBombillos.Consejo5BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos3[0][1])/100)*21.6))+"Kv");  
-                               }else if(y){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos3[1][1])/100)*21.6;
-                                   PprincipalBombillos.Consejo5BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos3[1][1])/100)*21.6))+"Kv");
-                               }
-                               
-                            }
-                
-                        }
-                        
-                    }
-                    for(int i = 0; i<5;i++){
-                        String s =  usuario.ConsejosActualesBombillo.get(i);
-                        boolean x = s.equals(consejos2[0][0]);
-                        boolean y = s.equals(consejos2[1][0]);
-                        boolean z = s.equals(consejos2[2][0]);
-                        if(x || y || z){
-                            
-                            
-                            System.out.println("ENtro");
-                           if(PprincipalBombillos.Consejo1Bombillo.getText().equals(s)){
-                               if (x){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos2[0][1])/100)*21.6;
-                                 PprincipalBombillos.Consejo1BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos2[0][1])/100)*21.6))+"Kv");   
-                               }else if (y){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos2[1][1])/100)*21.6;
-                                   PprincipalBombillos.Consejo1BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos2[1][1])/100)*21.6))+"Kv"); 
-                               }else if(z){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos2[2][1])/100)*21.6;
-                                   PprincipalBombillos.Consejo1BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos2[2][1])/100)*21.6))+"Kv");
-                                   
-                               }
-                                 
-                            }
-                           if(PprincipalBombillos.Consejo2Bombillo.getText().equals(s)){
-                               if(x){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos2[0][1])/100)*21.6;
-                                   PprincipalBombillos.Consejo2BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos2[0][1])/100)*21.6))+"Kv");
-                               }else if(y){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos2[1][1])/100)*21.6;
-                                   PprincipalBombillos.Consejo2BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos2[1][1])/100)*21.6))+"Kv");
-                                   
-                               }
-                               else if(z){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos2[2][1])/100)*21.6;
-                                   PprincipalBombillos.Consejo2BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos2[2][1])/100)*21.6))+"Kv");
-                                   
-                               }
-                 
-                       
-                               
-                            }
-                            
-                            if(PprincipalBombillos.Consejo3Bombillo.getText().equals(s)){
-                               
-                                
-                                if(x){
-                                    EnergiaAhorrar+=  (Double.valueOf(consejos2[0][1])/100)*21.6;
-                                    PprincipalBombillos.Consejo3BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos2[0][1])/100)*21.6))+"Kv");
-                                }else if(y){
-                                    EnergiaAhorrar+=  (Double.valueOf(consejos2[1][1])/100)*21.6;
-                                    PprincipalBombillos.Consejo3BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos2[1][1])/100)*21.6))+"Kv");
-                                }
-                                else if(z){
-                                    EnergiaAhorrar+=  (Double.valueOf(consejos2[2][1])/100)*21.6;
-                                   PprincipalBombillos.Consejo3BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos2[2][1])/100)*21.6))+"Kv");
-                                   
-                               }
-                               
-                            }
-                            
-                            if(PprincipalBombillos.Consejo4Bombillo.getText().equals(s)){
-                               if(x){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos2[0][1])/100)*21.6;
-                                   PprincipalBombillos.Consejo4BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos2[0][1])/100)*21.6))+"Kv");
-                               }else if(y){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos2[1][1])/100)*21.6;
-                                   PprincipalBombillos.Consejo4BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos2[1][1])/100)*21.6))+"Kv");
-                               }
-                               else if(z){
-                                   EnergiaAhorrar+= ( Double.valueOf(consejos2[2][1])/100)*21.6;
-                                   PprincipalBombillos.Consejo4BombilloE.setText("Energia Ahorrada "+((Double.valueOf(consejos2[2][1])/100)*21.6)+"Kv");
-                                   
-                               }
-                               
-                            }
-                            if(PprincipalBombillos.Consejo5Bombillo.getText().equals(s)){
-                                
-                               if(x){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos2[0][1])/100)*21.6;
-                                 PprincipalBombillos.Consejo5BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos2[0][1])/100)*21.6))+"Kv");  
-                               }else if(y){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos2[1][1])/100)*21.6;
-                                   PprincipalBombillos.Consejo5BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos2[1][1])/100)*21.6))+"Kv");
-                               }
-                               else if(z){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos2[2][1])/100)*21.6;
-                                   PprincipalBombillos.Consejo5BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos2[2][1])/100)*21.6))+"Kv");
-                                   
-                               }
-                               
-                            }
-                
-                        }
-                        
-                    }
-                    
-                    PprincipalBombillos.EnergiaAhorrada.setText("Energia a ahorrar "+formato.format(EnergiaAhorrar));
-                    PprincipalBombillos.EnergiaDesperdiciada.setText("Energia a desperdiciar "+formato.format(EnergiaAhorrar));
-                    
-                    ///////////////////////////////////
-                    ////////////////////////////////////NEVERA Nevera
-                    EnergiaAhorrar = 0.0;
-         
-                    for(int i = 0; i<5;i++){
-                        String s =  usuario.ConsejosActualesNevera.get(i);
-                        boolean x = s.equals(consejos5[0][0]);
-                        boolean y = s.equals(consejos5[1][0]);
-                        boolean z = s.equals(consejos5[2][0]);
-                        boolean w = s.equals(consejos5[3][0]);
-                                
-                        if(x || y || z || w){
-                            
-                            
-                            System.out.println("ENtro");
-                           if(PprincipalNevera.Consejo1Nevera.getText().equals(s)){
-                               if (x){
-                                 EnergiaAhorrar+= ( Double.valueOf(consejos5[0][1])/100)*44.6;
-                                 PprincipalNevera.Consejo1NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[0][1])/100)*44.6))+"Kv");   
-                               }else if (y){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos5[1][1])/100)*44.6;
-                                   PprincipalNevera.Consejo1NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[1][1])/100)*44.6))+"Kv"); 
-                                }else if(z){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos5[2][1])/100)*44.6;
-                                   PprincipalNevera.Consejo1NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[2][1])/100)*44.6))+"Kv"); 
-                                    
-                                }else if(w){
-                                    EnergiaAhorrar+=  (Double.valueOf(consejos5[3][1])/100)*44.6;
-                                   PprincipalNevera.Consejo1NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[3][1])/100)*44.6))+"Kv"); 
-                                    
-                                }
-                                 
-                            }
-                           if(PprincipalNevera.Consejo2Nevera.getText().equals(s)){
-                              if (x){
-                                 EnergiaAhorrar+=  (Double.valueOf(consejos5[0][1])/100)*44.6;
-                                 PprincipalNevera.Consejo2NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[0][1])/100)*44.6))+"Kv");   
-                               }else if (y){
-                                   EnergiaAhorrar+= (Double.valueOf(consejos5[1][1])/100)*44.6;
-                                   PprincipalNevera.Consejo2NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[1][1])/100)*44.6))+"Kv"); 
-                                }else if(z){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos5[2][1])/100)*44.6;
-                                   PprincipalNevera.Consejo2NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[2][1])/100)*44.6))+"Kv"); 
-                                    
-                                }else if(w){
-                                    EnergiaAhorrar+=  (Double.valueOf(consejos5[3][1])/100)*44.6;
-                                   PprincipalNevera.Consejo2NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[3][1])/100)*44.6))+"Kv"); 
-                                    
-                                }
-                               
-                            }
-                            if(PprincipalNevera.Consejo3Nevera.getText().equals(s)){
-                               if (x){
-                                 EnergiaAhorrar+= ( Double.valueOf(consejos5[0][1])/100)*44.6;
-                                 PprincipalNevera.Consejo3NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[0][1])/100)*44.6))+"Kv");   
-                               }else if (y){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos5[1][1])/100)*44.6;
-                                   PprincipalNevera.Consejo3NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[1][1])/100)*44.6))+"Kv"); 
-                                }else if(z){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos5[2][1])/100)*44.6;
-                                   PprincipalNevera.Consejo3NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[2][1])/100)*44.6))+"Kv"); 
-                                    
-                                }else if(w){
-                                    EnergiaAhorrar+=  Double.valueOf(consejos5[3][1])/100;
-                                   PprincipalNevera.Consejo3NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[3][1])/100)*44.6))+"Kv"); 
-                                    
-                                }
-                               
-                            }
-                            
-                            if(PprincipalNevera.Consejo4Nevera.getText().equals(s)){
-                               if (x){
-                                 EnergiaAhorrar+=  (Double.valueOf(consejos5[0][1])/100)*44.6;
-                                 PprincipalNevera.Consejo4NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[0][1])/100)*44.6))+"Kv");   
-                               }else if (y){
-                                   EnergiaAhorrar+=  Double.valueOf(consejos5[1][1])/100*44.6;
-                                   PprincipalNevera.Consejo4NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[1][1])/100)*44.6))+"Kv"); 
-                                }else if(z){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos5[2][1])/100)*44.6;
-                                   PprincipalNevera.Consejo4NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[2][1])/100)*44.6))+"Kv"); 
-                                    
-                                }else if(w){
-                                    EnergiaAhorrar+=  (Double.valueOf(consejos5[3][1])/100)*44.6;
-                                   PprincipalNevera.Consejo4NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[3][1])/100)*44.6))+"Kv"); 
-                                    
-                                }
-                               
-                            }
-                            if(PprincipalNevera.Consejo5Nevera.getText().equals(s)){
-                                
-                               if (x){
-                                 EnergiaAhorrar+=  (Double.valueOf(consejos5[0][1])/100)*44.6;
-                                 PprincipalNevera.Consejo5NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[0][1])/100)*44.6))+"Kv");   
-                               }else if (y){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos5[1][1])/100)*44.6;
-                                   PprincipalNevera.Consejo5NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[1][1])/100)*44.6))+"Kv"); 
-                                }else if(z){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos5[2][1])/100)*44.6;
-                                   PprincipalNevera.Consejo5NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[2][1])/100)*44.6))+"Kv"); 
-                                    
-                                }else if(w){
-                                    EnergiaAhorrar+=  (Double.valueOf(consejos5[3][1])/100)*44.6;
-                                   PprincipalNevera.Consejo5NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[3][1])/100)*44.6))+"Kv"); 
-                                    
-                                }
-                               
-                            }
-                
-                        }
-                        
-                    }
-                    for(int i = 0; i<5;i++){
-                        String s =  usuario.ConsejosActualesNevera.get(i);
-                        boolean x = s.equals(consejos6[0][0]);
-                        boolean y = s.equals(consejos6[1][0]);
-                        boolean z = s.equals(consejos6[2][0]);
-                        if(x || y || z){
-                            
-                            
-                           
-                           if(PprincipalNevera.Consejo1Nevera.getText().equals(s)){
-                               if (x){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos6[0][1])/100)*44.6;
-                                 PprincipalNevera.Consejo1NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos6[0][1])/100)*44.6))+"Kv");   
-                               }else if (y){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos6[1][1])/100)*44.6;
-                                   PprincipalNevera.Consejo1NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos6[1][1])/100)*44.6))+"Kv"); 
-                                }else if (z){
-                                   EnergiaAhorrar+=  Double.valueOf(consejos6[2][1])/100;
-                                   PprincipalNevera.Consejo1NeveraE.setText("Energia Ahorrada "+formato.format(((Double.valueOf(consejos6[2][1])/100)*44.6))+"Kv"); 
-                                }
-                                 
-                            }
-                           if(PprincipalNevera.Consejo2Nevera.getText().equals(s)){
-                               if (x){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos6[0][1])/100)*44.6;
-                                 PprincipalNevera.Consejo2NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos6[0][1])/100)*44.6))+"Kv");   
-                               }else if (y){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos6[1][1])/100)*44.6;
-                                   PprincipalNevera.Consejo2NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos6[1][1])/100)*44.6))+"Kv"); 
-                                }else if (z){
-                                   EnergiaAhorrar+=  (Double.valueOf(consejos6[2][1])/100)*44.6;
-                                   PprincipalNevera.Consejo2NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos6[2][1])/100)*44.6))+"Kv"); 
-                                }
-                               
-                            }
-                            if(PprincipalNevera.Consejo3Nevera.getText().equals(s)){
-                                if (x){
-                                   EnergiaAhorrar+=  Double.valueOf(consejos6[0][1])/100;
-                                 PprincipalNevera.Consejo3NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos6[0][1])/100)+"Kv"));   
-                               }else if (y){
-                                   EnergiaAhorrar+=  Double.valueOf(consejos6[1][1])/100;
-                                   PprincipalNevera.Consejo3NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos6[1][1])/100))+"Kv"); 
-                                }else if (z){
-                                   EnergiaAhorrar+=  Double.valueOf(consejos6[2][1])/100;
-                                   PprincipalNevera.Consejo3NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos6[2][1])/100))+"Kv"); 
-                                }
-                               
-                            }
-                            
-                            if(PprincipalNevera.Consejo4Nevera.getText().equals(s)){
-                               if (x){
-                                   EnergiaAhorrar+=  Double.valueOf(consejos6[0][1])/100;
-                                 PprincipalNevera.Consejo4NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos6[0][1])/100))+"Kv");   
-                               }else if (y){
-                                   EnergiaAhorrar+=  Double.valueOf(consejos6[1][1])/100;
-                                   PprincipalNevera.Consejo4NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos6[1][1])/100))+"Kv"); 
-                                }else if (z){
-                                   EnergiaAhorrar+=  Double.valueOf(consejos6[2][1])/100;
-                                   PprincipalNevera.Consejo4NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos6[2][1])/100))+"Kv"); 
-                                }
-                               
-                            }
-                            if(PprincipalNevera.Consejo5Nevera.getText().equals(s)){
-                                
-                               if (x){
-                                   EnergiaAhorrar+=  Double.valueOf(consejos6[0][1])/100;
-                                 PprincipalNevera.Consejo5NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos6[0][1])/100))+"Kv");   
-                               }else if (y){
-                                   EnergiaAhorrar+=  Double.valueOf(consejos6[1][1])/100;
-                                   PprincipalNevera.Consejo5NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos6[1][1])/100))+"Kv"); 
-                                }else if (z){
-                                   EnergiaAhorrar+=  Double.valueOf(consejos6[2][1])/100;
-                                   PprincipalNevera.Consejo5NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos6[2][1])/100))+"Kv"); 
-                                }
-                               
-                            }
-                
-                        }
-                        
-                    }
-                    for(int i = 0; i<5;i++){
-                        String s =  usuario.ConsejosActualesNevera.get(i);
-                        boolean x = s.equals(consejos7[0][0]);
-                        boolean y = s.equals(consejos7[1][0]);
-                        boolean z = s.equals(consejos7[2][0]);
-                        if(x || y || z){
-                            
-                            
-                           
-                           if(PprincipalNevera.Consejo1Nevera.getText().equals(s)){
-                               if (x){
-                                   EnergiaAhorrar+=  Double.valueOf(consejos7[0][1])/100;
-                                 PprincipalNevera.Consejo1NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos7[0][1])/100))+"Kv");   
-                               }else if (y){
-                                   EnergiaAhorrar+=  Double.valueOf(consejos7[1][1])/100;
-                                   PprincipalNevera.Consejo1NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos7[1][1])/100))+"Kv"); 
-                                }else if (z){
-                                   EnergiaAhorrar+=  Double.valueOf(consejos7[2][1])/100;
-                                   PprincipalNevera.Consejo1NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos7[2][1])/100))+"Kv"); 
-                                }
-                                 
-                            }
-                           if(PprincipalNevera.Consejo2Nevera.getText().equals(s)){
-                               if (x){
-                                   EnergiaAhorrar+=  Double.valueOf(consejos7[0][1])/100;
-                                 PprincipalNevera.Consejo2NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos7[0][1])/100))+"Kv");   
-                               }else if (y){
-                                   EnergiaAhorrar+=  Double.valueOf(consejos7[1][1])/100;
-                                   PprincipalNevera.Consejo2NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos7[1][1])/100))+"Kv"); 
-                                }else if (z){
-                                   EnergiaAhorrar+=  Double.valueOf(consejos7[2][1])/100;
-                                   PprincipalNevera.Consejo2NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos7[2][1])/100))+"Kv"); 
-                                }
-                               
-                            }
-                            if(PprincipalNevera.Consejo3Nevera.getText().equals(s)){
-                                if (x){
-                                   EnergiaAhorrar+=  Double.valueOf(consejos7[0][1])/100;
-                                 PprincipalNevera.Consejo3NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos7[0][1])/100))+"Kv");   
-                               }else if (y){
-                                   EnergiaAhorrar+=  Double.valueOf(consejos7[1][1])/100;
-                                   PprincipalNevera.Consejo3NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos7[1][1])/100))+"Kv"); 
-                                }else if (z){
-                                   EnergiaAhorrar+=  Double.valueOf(consejos7[2][1])/100;
-                                   PprincipalNevera.Consejo3NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos7[2][1])/100))+"Kv"); 
-                                }
-                               
-                            }
-                            
-                            if(PprincipalNevera.Consejo4Nevera.getText().equals(s)){
-                               if (x){
-                                   EnergiaAhorrar+=  Double.valueOf(consejos7[0][1])/100;
-                                 PprincipalNevera.Consejo4NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos7[0][1])/100))+"Kv");   
-                               }else if (y){
-                                   EnergiaAhorrar+=  Double.valueOf(consejos7[1][1])/100;
-                                   PprincipalNevera.Consejo4NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos7[1][1])/100))+"Kv"); 
-                                }else if (z){
-                                   EnergiaAhorrar+=  Double.valueOf(consejos7[2][1])/100;
-                                   PprincipalNevera.Consejo4NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos7[2][1])/100))+"Kv"); 
-                                }
-                               
-                            }
-                            if(PprincipalNevera.Consejo5Nevera.getText().equals(s)){
-                                
-                               if (x){
-                                   EnergiaAhorrar+=  Double.valueOf(consejos7[0][1])/100;
-                                 PprincipalNevera.Consejo5NeveraE.setText("Energia Ahorrada "+formato.format((Double.valueOf(consejos7[0][1])/100))+"Kv");   
-                               }else if (y){
-                                   EnergiaAhorrar+=  Double.valueOf(consejos7[1][1])/100;
-                                   PprincipalNevera.Consejo5NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos7[1][1])/100))+"Kv"); 
-                                }else if (z){
-                                   EnergiaAhorrar+=  Double.valueOf(consejos7[2][1])/100;
-                                   PprincipalNevera.Consejo5NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos7[2][1])/100))+"Kv"); 
-                                }
-                               
-                            }
-                
-                        }
-                        
-                    }
-                    
-                    
-                    PprincipalNevera.EnergiaAhorrada.setText("Energia a ahorrar "+formato.format(EnergiaAhorrar));
-                    PprincipalNevera.EnergiaDesperdiciada.setText("Energia a desperdiciar "+formato.format(EnergiaAhorrar));
-                    
-                    
-                    
+                    ElectrodomesticosPantallas();
+           
 
 
                 }catch(Exception e){
@@ -1097,6 +475,8 @@ public class Optimizate extends javax.swing.JFrame {
         }else if(PprincipalBombillos.isVisible()){
             PprincipalBombillos.setVisible(false);
             sesion.setVisible(true);
+            Anterior.setVisible(false);
+            Siguiente.setVisible(false);
             revalidate();
             repaint();
         }else if(PprincipalLavadora.isVisible()){
@@ -1109,7 +489,13 @@ public class Optimizate extends javax.swing.JFrame {
             PprincipalLavadora.setVisible(true);
             revalidate();
             repaint();
+        }else if(PprincipalMicroondas.isVisible()){
+            PprincipalMicroondas.setVisible(false);
+            PprincipalNevera.setVisible(true);
+            revalidate();
+            repaint();
         }
+        
         
 
     }//GEN-LAST:event_AnteriorActionPerformed
@@ -1208,17 +594,20 @@ public class Optimizate extends javax.swing.JFrame {
             ArrayList<String> conNEV = mapaCON.get("Nevera");
             ArrayList<String> conMIC = mapaCON.get("Microondas");
             
-            int cont = 3;
-            boolean enfocarse = electro.ObtenerEnfocarse();
-            if (enfocarse){
-                cont = 5;
-            }
-            for(int i = 0; i<cont;i++){
+            
+            for(int i = 0; i<conBOM.size();i++){
+          
                 u.ConsejosActualesBombillo.add(conBOM.get(i));
+            }
+            for (int i = 0; i<conLAV.size();i++){
                 u.ConsejosActualesLavadora.add(conLAV.get(i));
-                u.ConsejosActualesNevera.add(conNEV.get(i));
-                u.ConsejosActualesMicroondas.add(conMIC.get(i));
                 
+            }
+            for (int i = 0; i<conNEV.size();i++){
+                u.ConsejosActualesNevera.add(conNEV.get(i));
+            }
+            for (int i = 0; i<conMIC.size();i++){
+                u.ConsejosActualesMicroondas.add(conMIC.get(i));
             }
             
             u.ActualizarUsuario(UsuarioActual, u);
@@ -1313,6 +702,11 @@ public class Optimizate extends javax.swing.JFrame {
         }else if(PprincipalLavadora.isVisible()){
             PprincipalLavadora.setVisible(false);
             PprincipalNevera.setVisible(true);
+            revalidate();
+            repaint();
+        }else if(PprincipalNevera.isVisible()){
+            PprincipalNevera.setVisible(false);
+            PprincipalMicroondas.setVisible(true);
             revalidate();
             repaint();
         }
@@ -1598,7 +992,1223 @@ private class RegistroApp extends Registro implements ActionListener,KeyListener
     
     
 }
+public void ElectrodomesticosPantallas(){
+    diagnosticoUsuario = usuario.GetDiagnostico();
+    electrodomesticosUsuario = diagnosticoUsuario.GetElectrodomesticos();
 
+    ConsejosUsuario = electrodomesticosUsuario.getConsejosElectrodomesticos();
+
+    ConsejosLavadora =  ConsejosUsuario.get("Lavadora");
+
+    System.out.println(ConsejosLavadora);
+    ConsejosBombillo = (ArrayList) ConsejosUsuario.get("Bombillo");
+    System.out.println(ConsejosBombillo);
+
+    ConsejosNevera = (ArrayList)ConsejosUsuario.get("Nevera");
+    System.out.println(ConsejosNevera);
+    ConsejosMicroondas = (ArrayList)ConsejosUsuario.get("Microondas");
+    System.out.println(ConsejosMicroondas);
+
+    PprincipalBombillos.BombilloKV.setText("Energia gastada "+(electrodomesticosUsuario.GetBombilloKV()*2)+" Kv");
+    PprincipalNevera.NeveraKV.setText("Energia gastada "+(electrodomesticosUsuario.GetNeveraKV()*2)+" Kv");
+    PprincipalMicroondas.MicroondasKV.setText("Energia gastada "+(electrodomesticosUsuario.GetMicroondasKV()*2)+" Kv");
+    PprincipalLavadora.LavadoraKV.setText("Energia gastada "+(electrodomesticosUsuario.GetLavadoraKV()*2)+" Kv");
+
+    String consejos2[][] = electrodomesticosUsuario.ConsejosFacilesBombillo;
+    String consejos3[][] = electrodomesticosUsuario.ConsejosComplejosBombillo;
+    String consejos4[][] = electrodomesticosUsuario.ConsejosModeradosBombillo;
+
+    String consejos5[][] = electrodomesticosUsuario.ConsejosFacilesNevera;
+    String consejos6[][] = electrodomesticosUsuario.ConsejosComplejosNevera;
+    String consejos7[][] = electrodomesticosUsuario.ConsejosModeradosNevera;
+    
+    String consejos8[][] = electrodomesticosUsuario.ConsejosFacilesMicroondas;
+    String consejos9[][] = electrodomesticosUsuario.ConsejosComplejosMicroondas;
+    String consejos10[][] = electrodomesticosUsuario.ConsejosModeradosMicroondas;
+    
+    String consejos11[][] = electrodomesticosUsuario.ConsejosFacilesLavadora;
+    String consejos12[][] = electrodomesticosUsuario.ConsejosModeradosLavadora;
+    String consejos13[][] = electrodomesticosUsuario.ConsejosComplejosLavadora;
+
+
+
+
+    if(electrodomesticosUsuario.ObtenerEnfocarse()){
+
+       PprincipalBombillos.Consejo1Bombillo.setText(usuario.ConsejosActualesBombillo.get(0));
+       PprincipalBombillos.Consejo2Bombillo.setText(usuario.ConsejosActualesBombillo.get(1));
+       PprincipalBombillos.Consejo3Bombillo.setText(usuario.ConsejosActualesBombillo.get(2));
+       PprincipalBombillos.Consejo4Bombillo.setText(usuario.ConsejosActualesBombillo.get(3));
+       PprincipalBombillos.Consejo5Bombillo.setText(usuario.ConsejosActualesBombillo.get(4));
+
+       PprincipalNevera.Consejo1Nevera.setText(usuario.ConsejosActualesNevera.get(0));
+       PprincipalNevera.Consejo2Nevera.setText(usuario.ConsejosActualesNevera.get(1));
+       PprincipalNevera.Consejo3Nevera.setText(usuario.ConsejosActualesNevera.get(2));
+       PprincipalNevera.Consejo4Nevera.setText(usuario.ConsejosActualesNevera.get(3));
+       PprincipalNevera.Consejo5Nevera.setText(usuario.ConsejosActualesNevera.get(4));
+
+       PprincipalMicroondas.Consejo1Microondas.setText(usuario.ConsejosActualesMicroondas.get(0));
+       PprincipalMicroondas.Consejo2Microondas.setText(usuario.ConsejosActualesMicroondas.get(1));
+       PprincipalMicroondas.Consejo3Microondas.setText(usuario.ConsejosActualesMicroondas.get(2));
+       PprincipalMicroondas.Consejo4Microondas.setText(usuario.ConsejosActualesMicroondas.get(3));
+       PprincipalMicroondas.Consejo5Microondas.setText(usuario.ConsejosActualesMicroondas.get(4));
+
+       PprincipalLavadora.Consejo1Lavadora.setText(usuario.ConsejosActualesLavadora.get(0));
+       PprincipalLavadora.Consejo2Lavadora.setText(usuario.ConsejosActualesLavadora.get(1));
+       PprincipalLavadora.Consejo3Lavadora.setText(usuario.ConsejosActualesLavadora.get(2));
+       PprincipalLavadora.Consejo4Lavadora.setText(usuario.ConsejosActualesLavadora.get(3));
+       PprincipalLavadora.Consejo5Lavadora.setText(usuario.ConsejosActualesLavadora.get(4));
+
+    }else{
+       PprincipalBombillos.Consejo1Bombillo.setText(usuario.ConsejosActualesBombillo.get(0));
+       PprincipalBombillos.Consejo2Bombillo.setText(usuario.ConsejosActualesBombillo.get(1));
+       PprincipalBombillos.Consejo3Bombillo.setText(usuario.ConsejosActualesBombillo.get(2));
+       PprincipalBombillos.Consejo4Bombillo.setText(usuario.ConsejosActualesBombillo.get(3));
+       PprincipalBombillos.Consejo5Bombillo.setText(usuario.ConsejosActualesBombillo.get(4));
+       PprincipalBombillos.Consejo4Bombillo.setVisible(false);
+       PprincipalBombillos.Consejo5Bombillo.setVisible(false);
+       PprincipalBombillos.Separador4.setVisible(false);
+       PprincipalBombillos.Separador5.setVisible(false);
+       PprincipalBombillos.Consejo4BombilloE.setVisible(false);
+       PprincipalBombillos.Consejo5BombilloE.setVisible(false);
+
+
+       PprincipalNevera.Consejo1Nevera.setText(usuario.ConsejosActualesNevera.get(0));
+       PprincipalNevera.Consejo2Nevera.setText(usuario.ConsejosActualesNevera.get(1));
+       PprincipalNevera.Consejo3Nevera.setText(usuario.ConsejosActualesNevera.get(2));
+       PprincipalNevera.Consejo4Nevera.setText(usuario.ConsejosActualesNevera.get(3));
+       PprincipalNevera.Consejo5Nevera.setText(usuario.ConsejosActualesNevera.get(4));
+       PprincipalNevera.Consejo4Nevera.setVisible(false);
+       PprincipalNevera.Consejo5Nevera.setVisible(false);
+       PprincipalNevera.Separador4.setVisible(false);
+       PprincipalNevera.Separador5.setVisible(false);
+       PprincipalNevera.Consejo4NeveraE.setVisible(false);
+       PprincipalNevera.Consejo5NeveraE.setVisible(false);
+
+
+       PprincipalMicroondas.Consejo1Microondas.setText(usuario.ConsejosActualesMicroondas.get(0));
+       PprincipalMicroondas.Consejo2Microondas.setText(usuario.ConsejosActualesMicroondas.get(1));
+       PprincipalMicroondas.Consejo3Microondas.setText(usuario.ConsejosActualesMicroondas.get(2));
+       PprincipalMicroondas.Consejo4Microondas.setText(usuario.ConsejosActualesMicroondas.get(3));
+       PprincipalMicroondas.Consejo5Microondas.setText(usuario.ConsejosActualesMicroondas.get(4));
+       PprincipalMicroondas.Consejo4Microondas.setVisible(false);
+       PprincipalMicroondas.Consejo5Microondas.setVisible(false);
+       PprincipalMicroondas.Separador4.setVisible(false);
+       PprincipalMicroondas.Separador5.setVisible(false);
+       PprincipalMicroondas.Consejo4MicroondasE.setVisible(false);
+       PprincipalMicroondas.Consejo5MicroondasE.setVisible(false);
+
+       PprincipalLavadora.Consejo1Lavadora.setText(usuario.ConsejosActualesLavadora.get(0));
+       PprincipalLavadora.Consejo2Lavadora.setText(usuario.ConsejosActualesLavadora.get(1));
+       PprincipalLavadora.Consejo3Lavadora.setText(usuario.ConsejosActualesLavadora.get(2));
+       PprincipalLavadora.Consejo4Lavadora.setText(usuario.ConsejosActualesLavadora.get(3));
+       PprincipalLavadora.Consejo5Lavadora.setText(usuario.ConsejosActualesLavadora.get(4));
+       PprincipalLavadora.Consejo4Lavadora.setVisible(false);
+       PprincipalLavadora.Consejo5Lavadora.setVisible(false);
+       PprincipalLavadora.Separador4.setVisible(false);
+       PprincipalLavadora.Separador5.setVisible(false);
+       PprincipalLavadora.Consejo4LavadoraE.setVisible(false);
+       PprincipalLavadora.Consejo5LavadoraE.setVisible(false);
+
+
+
+    }
+
+    Double EnergiaAhorrar = 0.0d;
+    DecimalFormat formato = new DecimalFormat("#.00");
+    
+    //BOMBILLOS
+
+    for(int i = 0; i<5;i++){
+        String s =  usuario.ConsejosActualesBombillo.get(i);
+        boolean x = s.equals(consejos4[0][0]);
+        boolean y = s.equals(consejos4[1][0]);
+        if(x || y){
+
+
+            System.out.println("ENtro");
+           if(PprincipalBombillos.Consejo1Bombillo.getText().equals(s)){
+               if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos4[0][1])/100) *21.6 ;
+
+                 PprincipalBombillos.Consejo1BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[1][1])/100)*21.6))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos4[1][1])/100)*21.6;
+                   PprincipalBombillos.Consejo1BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[1][1])/100)*21.6))+"Kv"); 
+                }
+
+            }
+           if(PprincipalBombillos.Consejo2Bombillo.getText().equals(s)){
+               if(x){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos4[0][1])/100)*21.6;
+                   PprincipalBombillos.Consejo2BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[0][1])/100)*21.6))+"Kv");
+               }else if(y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos4[1][1])/100)*21.6;
+                   PprincipalBombillos.Consejo2BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[1][1])/100)*21.6))+"Kv");
+
+               }
+
+            }
+            if(PprincipalBombillos.Consejo3Bombillo.getText().equals(s)){
+                if(x){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos4[0][1])/100)*21.6;
+                    PprincipalBombillos.Consejo3BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[0][1])/100)*21.6))+"Kv");
+                }else if(y){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos4[1][1])/100)*21.6;
+                    PprincipalBombillos.Consejo3BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[1][1])/100)*21.6))+"Kv");
+                }
+
+            }
+
+            if(PprincipalBombillos.Consejo4Bombillo.getText().equals(s)){
+               if(x){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos4[0][1])/100)*21.6;
+                   PprincipalBombillos.Consejo4BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[0][1])/100)*21.6))+"Kv");
+               }else if(y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos4[1][1])/100)*21.6;
+                   PprincipalBombillos.Consejo4BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[1][1])/100)*21.6))+"Kv");
+               }
+
+            }
+            if(PprincipalBombillos.Consejo5Bombillo.getText().equals(s)){
+
+               if(x){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos4[0][1])/100)*21.6;
+                 PprincipalBombillos.Consejo5BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[0][1])/100)*21.6))+"Kv");  
+               }else if(y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos4[1][1])/100)*21.6;
+                   PprincipalBombillos.Consejo5BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[1][1])/100)*21.6))+"Kv");
+               }
+
+            }
+
+        }
+
+    }
+    for(int i = 0; i<5;i++){
+        String s =  usuario.ConsejosActualesBombillo.get(i);
+        boolean x = s.equals(consejos3[0][0]);
+        boolean y = s.equals(consejos3[1][0]);
+        if(x || y){
+
+
+            System.out.println("ENtro");
+           if(PprincipalBombillos.Consejo1Bombillo.getText().equals(s)){
+               if (x){
+                   EnergiaAhorrar+= ( Double.valueOf(consejos3[0][1])/100)*21.6;
+                 PprincipalBombillos.Consejo1BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos3[0][1])/100)*21.6))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos3[1][1])/100)*21.6;
+                   PprincipalBombillos.Consejo1BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos3[1][1])/100)*21.6))+"Kv"); 
+                }
+
+            }
+           if(PprincipalBombillos.Consejo2Bombillo.getText().equals(s)){
+               if(x){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos3[0][1])/100)*21.6;
+                   PprincipalBombillos.Consejo2BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos3[0][1])/100)*21.6))+"Kv");
+               }else if(y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos3[1][1])/100)*21.6;
+                   PprincipalBombillos.Consejo2BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos3[1][1])/100)*21.6))+"Kv");
+
+               }
+
+            }
+            if(PprincipalBombillos.Consejo3Bombillo.getText().equals(s)){
+                if(x){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos3[0][1])/100)*21.6;
+                    PprincipalBombillos.Consejo3BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos3[0][1])/100)*21.6))+"Kv");
+                }else if(y){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos3[1][1])/100)*21.6;
+                    PprincipalBombillos.Consejo3BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos3[1][1])/100)*21.6))+"Kv");
+                }
+
+            }
+
+            if(PprincipalBombillos.Consejo4Bombillo.getText().equals(s)){
+               if(x){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos3[0][1])/100)*21.6;
+                   PprincipalBombillos.Consejo4BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos3[0][1])/100)*21.6))+"Kv");
+               }else if(y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos3[1][1])/100)*21.6;
+                   PprincipalBombillos.Consejo4BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos3[1][1])/100)*21.6))+"Kv");
+               }
+
+            }
+            if(PprincipalBombillos.Consejo5Bombillo.getText().equals(s)){
+
+               if(x){
+                   EnergiaAhorrar+= (Double.valueOf(consejos3[0][1])/100)*21.6;
+                 PprincipalBombillos.Consejo5BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos3[0][1])/100)*21.6))+"Kv");  
+               }else if(y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos3[1][1])/100)*21.6;
+                   PprincipalBombillos.Consejo5BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos3[1][1])/100)*21.6))+"Kv");
+               }
+
+            }
+
+        }
+
+    }
+    for(int i = 0; i<5;i++){
+        String s =  usuario.ConsejosActualesBombillo.get(i);
+        boolean x = s.equals(consejos2[0][0]);
+        boolean y = s.equals(consejos2[1][0]);
+        boolean z = s.equals(consejos2[2][0]);
+        if(x || y || z){
+
+
+            System.out.println("ENtro");
+           if(PprincipalBombillos.Consejo1Bombillo.getText().equals(s)){
+               if (x){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos2[0][1])/100)*21.6;
+                 PprincipalBombillos.Consejo1BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos2[0][1])/100)*21.6))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos2[1][1])/100)*21.6;
+                   PprincipalBombillos.Consejo1BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos2[1][1])/100)*21.6))+"Kv"); 
+               }else if(z){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos2[2][1])/100)*21.6;
+                   PprincipalBombillos.Consejo1BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos2[2][1])/100)*21.6))+"Kv");
+
+               }
+
+            }
+           if(PprincipalBombillos.Consejo2Bombillo.getText().equals(s)){
+               if(x){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos2[0][1])/100)*21.6;
+                   PprincipalBombillos.Consejo2BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos2[0][1])/100)*21.6))+"Kv");
+               }else if(y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos2[1][1])/100)*21.6;
+                   PprincipalBombillos.Consejo2BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos2[1][1])/100)*21.6))+"Kv");
+
+               }
+               else if(z){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos2[2][1])/100)*21.6;
+                   PprincipalBombillos.Consejo2BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos2[2][1])/100)*21.6))+"Kv");
+
+               }
+
+
+
+            }
+
+            if(PprincipalBombillos.Consejo3Bombillo.getText().equals(s)){
+
+
+                if(x){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos2[0][1])/100)*21.6;
+                    PprincipalBombillos.Consejo3BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos2[0][1])/100)*21.6))+"Kv");
+                }else if(y){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos2[1][1])/100)*21.6;
+                    PprincipalBombillos.Consejo3BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos2[1][1])/100)*21.6))+"Kv");
+                }
+                else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos2[2][1])/100)*21.6;
+                   PprincipalBombillos.Consejo3BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos2[2][1])/100)*21.6))+"Kv");
+
+               }
+
+            }
+
+            if(PprincipalBombillos.Consejo4Bombillo.getText().equals(s)){
+               if(x){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos2[0][1])/100)*21.6;
+                   PprincipalBombillos.Consejo4BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos2[0][1])/100)*21.6))+"Kv");
+               }else if(y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos2[1][1])/100)*21.6;
+                   PprincipalBombillos.Consejo4BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos2[1][1])/100)*21.6))+"Kv");
+               }
+               else if(z){
+                   EnergiaAhorrar+= ( Double.valueOf(consejos2[2][1])/100)*21.6;
+                   PprincipalBombillos.Consejo4BombilloE.setText("Energia Ahorrada "+((Double.valueOf(consejos2[2][1])/100)*21.6)+"Kv");
+
+               }
+
+            }
+            if(PprincipalBombillos.Consejo5Bombillo.getText().equals(s)){
+
+               if(x){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos2[0][1])/100)*21.6;
+                 PprincipalBombillos.Consejo5BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos2[0][1])/100)*21.6))+"Kv");  
+               }else if(y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos2[1][1])/100)*21.6;
+                   PprincipalBombillos.Consejo5BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos2[1][1])/100)*21.6))+"Kv");
+               }
+               else if(z){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos2[2][1])/100)*21.6;
+                   PprincipalBombillos.Consejo5BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos2[2][1])/100)*21.6))+"Kv");
+
+               }
+
+            }
+
+        }
+
+    }
+
+    PprincipalBombillos.EnergiaAhorrada.setText("Energia a ahorrar "+formato.format(EnergiaAhorrar));
+    PprincipalBombillos.EnergiaDesperdiciada.setText("Energia a desperdiciar "+formato.format(EnergiaAhorrar));
+
+    ///////////////////////////////////
+    ////////////////////////////////////NEVERA Nevera
+    EnergiaAhorrar = 0.0;
+
+    for(int i = 0; i<5;i++){
+        String s =  usuario.ConsejosActualesNevera.get(i);
+        boolean x = s.equals(consejos5[0][0]);
+        boolean y = s.equals(consejos5[1][0]);
+        boolean z = s.equals(consejos5[2][0]);
+        boolean w = s.equals(consejos5[3][0]);
+
+        if(x || y || z || w){
+
+
+            System.out.println("ENtro");
+           if(PprincipalNevera.Consejo1Nevera.getText().equals(s)){
+               if (x){
+                 EnergiaAhorrar+= ( Double.valueOf(consejos5[0][1])/100)*44.6;
+                 PprincipalNevera.Consejo1NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[0][1])/100)*44.6))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos5[1][1])/100)*44.6;
+                   PprincipalNevera.Consejo1NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[1][1])/100)*44.6))+"Kv"); 
+                }else if(z){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos5[2][1])/100)*44.6;
+                   PprincipalNevera.Consejo1NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[2][1])/100)*44.6))+"Kv"); 
+
+                }else if(w){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos5[3][1])/100)*44.6;
+                   PprincipalNevera.Consejo1NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[3][1])/100)*44.6))+"Kv"); 
+
+                }
+
+            }
+           if(PprincipalNevera.Consejo2Nevera.getText().equals(s)){
+              if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos5[0][1])/100)*44.6;
+                 PprincipalNevera.Consejo2NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[0][1])/100)*44.6))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+= (Double.valueOf(consejos5[1][1])/100)*44.6;
+                   PprincipalNevera.Consejo2NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[1][1])/100)*44.6))+"Kv"); 
+                }else if(z){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos5[2][1])/100)*44.6;
+                   PprincipalNevera.Consejo2NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[2][1])/100)*44.6))+"Kv"); 
+
+                }else if(w){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos5[3][1])/100)*44.6;
+                   PprincipalNevera.Consejo2NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[3][1])/100)*44.6))+"Kv"); 
+
+                }
+
+            }
+            if(PprincipalNevera.Consejo3Nevera.getText().equals(s)){
+               if (x){
+                 EnergiaAhorrar+= ( Double.valueOf(consejos5[0][1])/100)*44.6;
+                 PprincipalNevera.Consejo3NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[0][1])/100)*44.6))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos5[1][1])/100)*44.6;
+                   PprincipalNevera.Consejo3NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[1][1])/100)*44.6))+"Kv"); 
+                }else if(z){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos5[2][1])/100)*44.6;
+                   PprincipalNevera.Consejo3NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[2][1])/100)*44.6))+"Kv"); 
+
+                }else if(w){
+                    EnergiaAhorrar+=  Double.valueOf(consejos5[3][1])/100;
+                   PprincipalNevera.Consejo3NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[3][1])/100)*44.6))+"Kv"); 
+
+                }
+
+            }
+
+            if(PprincipalNevera.Consejo4Nevera.getText().equals(s)){
+               if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos5[0][1])/100)*44.6;
+                 PprincipalNevera.Consejo4NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[0][1])/100)*44.6))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  Double.valueOf(consejos5[1][1])/100*44.6;
+                   PprincipalNevera.Consejo4NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[1][1])/100)*44.6))+"Kv"); 
+                }else if(z){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos5[2][1])/100)*44.6;
+                   PprincipalNevera.Consejo4NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[2][1])/100)*44.6))+"Kv"); 
+
+                }else if(w){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos5[3][1])/100)*44.6;
+                   PprincipalNevera.Consejo4NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[3][1])/100)*44.6))+"Kv"); 
+
+                }
+
+            }
+            if(PprincipalNevera.Consejo5Nevera.getText().equals(s)){
+
+               if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos5[0][1])/100)*44.6;
+                 PprincipalNevera.Consejo5NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[0][1])/100)*44.6))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos5[1][1])/100)*44.6;
+                   PprincipalNevera.Consejo5NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[1][1])/100)*44.6))+"Kv"); 
+                }else if(z){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos5[2][1])/100)*44.6;
+                   PprincipalNevera.Consejo5NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[2][1])/100)*44.6))+"Kv"); 
+
+                }else if(w){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos5[3][1])/100)*44.6;
+                   PprincipalNevera.Consejo5NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos5[3][1])/100)*44.6))+"Kv"); 
+
+                }
+
+            }
+
+        }
+
+    }
+    for(int i = 0; i<5;i++){
+        String s =  usuario.ConsejosActualesNevera.get(i);
+        boolean x = s.equals(consejos6[0][0]);
+        boolean y = s.equals(consejos6[1][0]);
+        boolean z = s.equals(consejos6[2][0]);
+        if(x || y || z){
+
+
+
+           if(PprincipalNevera.Consejo1Nevera.getText().equals(s)){
+               if (x){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos6[0][1])/100)*44.6;
+                 PprincipalNevera.Consejo1NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos6[0][1])/100)*44.6))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos6[1][1])/100)*44.6;
+                   PprincipalNevera.Consejo1NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos6[1][1])/100)*44.6))+"Kv"); 
+                }else if (z){
+                   EnergiaAhorrar+=  Double.valueOf(consejos6[2][1])/100;
+                   PprincipalNevera.Consejo1NeveraE.setText("Energia Ahorrada "+formato.format(((Double.valueOf(consejos6[2][1])/100)*44.6))+"Kv"); 
+                }
+
+            }
+           if(PprincipalNevera.Consejo2Nevera.getText().equals(s)){
+               if (x){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos6[0][1])/100)*44.6;
+                 PprincipalNevera.Consejo2NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos6[0][1])/100)*44.6))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos6[1][1])/100)*44.6;
+                   PprincipalNevera.Consejo2NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos6[1][1])/100)*44.6))+"Kv"); 
+                }else if (z){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos6[2][1])/100)*44.6;
+                   PprincipalNevera.Consejo2NeveraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos6[2][1])/100)*44.6))+"Kv"); 
+                }
+
+            }
+            if(PprincipalNevera.Consejo3Nevera.getText().equals(s)){
+                if (x){
+                   EnergiaAhorrar+=  Double.valueOf(consejos6[0][1])/100;
+                 PprincipalNevera.Consejo3NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos6[0][1])/100)+"Kv"));   
+               }else if (y){
+                   EnergiaAhorrar+=  Double.valueOf(consejos6[1][1])/100;
+                   PprincipalNevera.Consejo3NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos6[1][1])/100))+"Kv"); 
+                }else if (z){
+                   EnergiaAhorrar+=  Double.valueOf(consejos6[2][1])/100;
+                   PprincipalNevera.Consejo3NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos6[2][1])/100))+"Kv"); 
+                }
+
+            }
+
+            if(PprincipalNevera.Consejo4Nevera.getText().equals(s)){
+               if (x){
+                   EnergiaAhorrar+=  Double.valueOf(consejos6[0][1])/100;
+                 PprincipalNevera.Consejo4NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos6[0][1])/100))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  Double.valueOf(consejos6[1][1])/100;
+                   PprincipalNevera.Consejo4NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos6[1][1])/100))+"Kv"); 
+                }else if (z){
+                   EnergiaAhorrar+=  Double.valueOf(consejos6[2][1])/100;
+                   PprincipalNevera.Consejo4NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos6[2][1])/100))+"Kv"); 
+                }
+
+            }
+            if(PprincipalNevera.Consejo5Nevera.getText().equals(s)){
+
+               if (x){
+                   EnergiaAhorrar+=  Double.valueOf(consejos6[0][1])/100;
+                 PprincipalNevera.Consejo5NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos6[0][1])/100))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  Double.valueOf(consejos6[1][1])/100;
+                   PprincipalNevera.Consejo5NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos6[1][1])/100))+"Kv"); 
+                }else if (z){
+                   EnergiaAhorrar+=  Double.valueOf(consejos6[2][1])/100;
+                   PprincipalNevera.Consejo5NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos6[2][1])/100))+"Kv"); 
+                }
+
+            }
+
+        }
+
+    }
+    for(int i = 0; i<5;i++){
+        String s =  usuario.ConsejosActualesNevera.get(i);
+        boolean x = s.equals(consejos7[0][0]);
+        boolean y = s.equals(consejos7[1][0]);
+        boolean z = s.equals(consejos7[2][0]);
+        if(x || y || z){
+
+
+
+           if(PprincipalNevera.Consejo1Nevera.getText().equals(s)){
+               if (x){
+                   EnergiaAhorrar+=  Double.valueOf(consejos7[0][1])/100;
+                 PprincipalNevera.Consejo1NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos7[0][1])/100))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  Double.valueOf(consejos7[1][1])/100;
+                   PprincipalNevera.Consejo1NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos7[1][1])/100))+"Kv"); 
+                }else if (z){
+                   EnergiaAhorrar+=  Double.valueOf(consejos7[2][1])/100;
+                   PprincipalNevera.Consejo1NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos7[2][1])/100))+"Kv"); 
+                }
+
+            }
+           if(PprincipalNevera.Consejo2Nevera.getText().equals(s)){
+               if (x){
+                   EnergiaAhorrar+=  Double.valueOf(consejos7[0][1])/100;
+                 PprincipalNevera.Consejo2NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos7[0][1])/100))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  Double.valueOf(consejos7[1][1])/100;
+                   PprincipalNevera.Consejo2NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos7[1][1])/100))+"Kv"); 
+                }else if (z){
+                   EnergiaAhorrar+=  Double.valueOf(consejos7[2][1])/100;
+                   PprincipalNevera.Consejo2NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos7[2][1])/100))+"Kv"); 
+                }
+
+            }
+            if(PprincipalNevera.Consejo3Nevera.getText().equals(s)){
+                if (x){
+                   EnergiaAhorrar+=  Double.valueOf(consejos7[0][1])/100;
+                 PprincipalNevera.Consejo3NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos7[0][1])/100))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  Double.valueOf(consejos7[1][1])/100;
+                   PprincipalNevera.Consejo3NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos7[1][1])/100))+"Kv"); 
+                }else if (z){
+                   EnergiaAhorrar+=  Double.valueOf(consejos7[2][1])/100;
+                   PprincipalNevera.Consejo3NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos7[2][1])/100))+"Kv"); 
+                }
+
+            }
+
+            if(PprincipalNevera.Consejo4Nevera.getText().equals(s)){
+               if (x){
+                   EnergiaAhorrar+=  Double.valueOf(consejos7[0][1])/100;
+                 PprincipalNevera.Consejo4NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos7[0][1])/100))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  Double.valueOf(consejos7[1][1])/100;
+                   PprincipalNevera.Consejo4NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos7[1][1])/100))+"Kv"); 
+                }else if (z){
+                   EnergiaAhorrar+=  Double.valueOf(consejos7[2][1])/100;
+                   PprincipalNevera.Consejo4NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos7[2][1])/100))+"Kv"); 
+                }
+
+            }
+            if(PprincipalNevera.Consejo5Nevera.getText().equals(s)){
+
+               if (x){
+                   EnergiaAhorrar+=  Double.valueOf(consejos7[0][1])/100;
+                 PprincipalNevera.Consejo5NeveraE.setText("Energia Ahorrada "+formato.format((Double.valueOf(consejos7[0][1])/100))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  Double.valueOf(consejos7[1][1])/100;
+                   PprincipalNevera.Consejo5NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos7[1][1])/100))+"Kv"); 
+                }else if (z){
+                   EnergiaAhorrar+=  Double.valueOf(consejos7[2][1])/100;
+                   PprincipalNevera.Consejo5NeveraE.setText("Energia Ahorrada "+(formato.format(Double.valueOf(consejos7[2][1])/100))+"Kv"); 
+                }
+
+            }
+
+        }
+
+    }
+    
+
+
+    PprincipalNevera.EnergiaAhorrada.setText("Energia a ahorrar "+formato.format(EnergiaAhorrar));
+    PprincipalNevera.EnergiaDesperdiciada.setText("Energia a desperdiciar "+formato.format(EnergiaAhorrar));
+    
+    
+    EnergiaAhorrar = 0.0;
+    ///////MICROONDAS
+    for(int i = 0; i<5;i++){
+        String s =  usuario.ConsejosActualesMicroondas.get(i);
+        boolean x = s.equals(consejos8[0][0]);
+        boolean y = s.equals(consejos8[1][0]);
+        boolean z = s.equals(consejos8[2][0]);
+        if(x || y || z){
+
+
+            System.out.println("ENtro");
+           if(PprincipalMicroondas.Consejo1Microondas.getText().equals(s)){
+               if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos8[0][1])/100) *3 ;
+
+                 PprincipalMicroondas.Consejo1MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos8[0][1])/100)*3))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos8[1][1])/100)*3;
+                   PprincipalMicroondas.Consejo1MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos8[1][1])/100)*3))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos8[2][1])/100)*3;
+                    PprincipalMicroondas.Consejo1MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos8[2][1])/100)*3))+"Kv"); 
+          
+                }
+
+            }
+           if(PprincipalMicroondas.Consejo2Microondas.getText().equals(s)){
+               if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos8[0][1])/100) *3 ;
+
+                 PprincipalMicroondas.Consejo2MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos8[0][1])/100)*3))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos8[1][1])/100)*3;
+                   PprincipalMicroondas.Consejo2MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos8[1][1])/100)*3))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos8[2][1])/100)*3;
+                    PprincipalMicroondas.Consejo2MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos8[2][1])/100)*3))+"Kv"); 
+          
+                }
+
+            }
+            if(PprincipalMicroondas.Consejo3Microondas.getText().equals(s)){
+                if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos8[0][1])/100) *3 ;
+
+                 PprincipalMicroondas.Consejo3MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos8[0][1])/100)*3))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos8[1][1])/100)*3;
+                   PprincipalMicroondas.Consejo3MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos8[1][1])/100)*3))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos8[2][1])/100)*3;
+                    PprincipalMicroondas.Consejo3MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos8[2][1])/100)*3))+"Kv"); 
+          
+                }
+
+            }
+
+            if(PprincipalMicroondas.Consejo4Microondas.getText().equals(s)){
+               if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos8[0][1])/100) *3 ;
+
+                 PprincipalMicroondas.Consejo4MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos8[0][1])/100)*3))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos8[1][1])/100)*3;
+                   PprincipalMicroondas.Consejo4MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos8[1][1])/100)*3))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos8[2][1])/100)*3;
+                    PprincipalMicroondas.Consejo4MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos8[2][1])/100)*3))+"Kv"); 
+          
+                }
+
+            }
+            if(PprincipalMicroondas.Consejo5Microondas.getText().equals(s)){
+
+              if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos8[0][1])/100) *3 ;
+
+                 PprincipalMicroondas.Consejo5MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos8[0][1])/100)*3))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos8[1][1])/100)*3;
+                   PprincipalMicroondas.Consejo5MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos8[1][1])/100)*3))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos8[2][1])/100)*3;
+                    PprincipalMicroondas.Consejo5MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos8[2][1])/100)*3))+"Kv"); 
+          
+                }
+
+            }
+
+        }
+
+    }
+    for(int i = 0; i<5;i++){
+        String s =  usuario.ConsejosActualesMicroondas.get(i);
+        boolean x = s.equals(consejos9[0][0]);
+        boolean y = s.equals(consejos9[1][0]);
+        boolean z = s.equals(consejos9[2][0]);
+        if(x || y || z){
+
+
+            System.out.println("ENtro");
+           if(PprincipalMicroondas.Consejo1Microondas.getText().equals(s)){
+               if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos9[0][1])/100) *3 ;
+
+                 PprincipalMicroondas.Consejo1MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos9[0][1])/100)*3))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos9[1][1])/100)*3;
+                   PprincipalMicroondas.Consejo1MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos9[1][1])/100)*3))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos9[2][1])/100)*3;
+                    PprincipalMicroondas.Consejo1MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos9[2][1])/100)*3))+"Kv"); 
+          
+                }
+
+            }
+           if(PprincipalMicroondas.Consejo2Microondas.getText().equals(s)){
+               if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos9[0][1])/100) *3 ;
+
+                 PprincipalMicroondas.Consejo2MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos9[0][1])/100)*3))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos9[1][1])/100)*3;
+                   PprincipalMicroondas.Consejo2MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos8[1][1])/100)*3))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos9[2][1])/100)*3;
+                    PprincipalMicroondas.Consejo2MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos8[2][1])/100)*3))+"Kv"); 
+          
+                }
+
+            }
+            if(PprincipalMicroondas.Consejo3Microondas.getText().equals(s)){
+                if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos9[0][1])/100) *3 ;
+
+                 PprincipalMicroondas.Consejo3MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos9[0][1])/100)*3))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos9[1][1])/100)*3;
+                   PprincipalMicroondas.Consejo3MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos9[1][1])/100)*3))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos9[2][1])/100)*3;
+                    PprincipalMicroondas.Consejo3MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos9[2][1])/100)*3))+"Kv"); 
+          
+                }
+
+            }
+
+            if(PprincipalMicroondas.Consejo4Microondas.getText().equals(s)){
+               if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos9[0][1])/100) *3 ;
+
+                 PprincipalMicroondas.Consejo4MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos9[0][1])/100)*3))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos9[1][1])/100)*3;
+                   PprincipalMicroondas.Consejo4MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos9[1][1])/100)*3))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos9[2][1])/100)*3;
+                    PprincipalMicroondas.Consejo4MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos9[2][1])/100)*3))+"Kv"); 
+          
+                }
+
+            }
+            if(PprincipalMicroondas.Consejo5Microondas.getText().equals(s)){
+
+              if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos9[0][1])/100) *3 ;
+
+                 PprincipalMicroondas.Consejo5MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos9[0][1])/100)*3))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos9[1][1])/100)*3;
+                   PprincipalMicroondas.Consejo5MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos9[1][1])/100)*3))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos9[2][1])/100)*3;
+                    PprincipalMicroondas.Consejo5MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos9[2][1])/100)*3))+"Kv"); 
+          
+                }
+
+            }
+
+        }
+
+    }
+    for(int i = 0; i<5;i++){
+        String s =  usuario.ConsejosActualesMicroondas.get(i);
+        boolean x = s.equals(consejos10[0][0]);
+        boolean y = s.equals(consejos10[1][0]);
+        boolean z = s.equals(consejos10[2][0]);
+        if(x || y || z){
+
+
+            System.out.println("ENtro");
+           if(PprincipalMicroondas.Consejo1Microondas.getText().equals(s)){
+               if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos10[0][1])/100) *3 ;
+
+                 PprincipalMicroondas.Consejo1MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos10[0][1])/100)*3))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos10[1][1])/100)*3;
+                   PprincipalMicroondas.Consejo1MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos10[1][1])/100)*3))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos10[2][1])/100)*3;
+                    PprincipalMicroondas.Consejo1MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos10[2][1])/100)*3))+"Kv"); 
+          
+                }
+
+            }
+           if(PprincipalMicroondas.Consejo2Microondas.getText().equals(s)){
+               if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos10[0][1])/100) *3 ;
+
+                 PprincipalMicroondas.Consejo2MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos10[0][1])/100)*3))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos10[1][1])/100)*3;
+                   PprincipalMicroondas.Consejo2MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos10[1][1])/100)*3))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos10[2][1])/100)*3;
+                    PprincipalMicroondas.Consejo2MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos10[2][1])/100)*3))+"Kv"); 
+          
+                }
+
+            }
+            if(PprincipalMicroondas.Consejo3Microondas.getText().equals(s)){
+                if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos10[0][1])/100) *3 ;
+
+                 PprincipalMicroondas.Consejo3MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos10[0][1])/100)*3))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos10[1][1])/100)*3;
+                   PprincipalMicroondas.Consejo3MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos10[1][1])/100)*3))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos10[2][1])/100)*3;
+                    PprincipalMicroondas.Consejo3MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos10[2][1])/100)*3))+"Kv"); 
+          
+                }
+
+            }
+
+            if(PprincipalMicroondas.Consejo4Microondas.getText().equals(s)){
+               if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos10[0][1])/100) *3 ;
+
+                 PprincipalMicroondas.Consejo4MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos10[0][1])/100)*3))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos10[1][1])/100)*3;
+                   PprincipalMicroondas.Consejo4MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos10[1][1])/100)*3))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos10[2][1])/100)*3;
+                    PprincipalMicroondas.Consejo4MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos10[2][1])/100)*3))+"Kv"); 
+          
+                }
+
+            }
+            if(PprincipalMicroondas.Consejo5Microondas.getText().equals(s)){
+
+              if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos10[0][1])/100) *3 ;
+
+                 PprincipalMicroondas.Consejo5MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos10[0][1])/100)*3))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos10[1][1])/100)*3;
+                   PprincipalMicroondas.Consejo5MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos10[1][1])/100)*3))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos10[2][1])/100)*3;
+                    PprincipalMicroondas.Consejo5MicroondasE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos10[2][1])/100)*3))+"Kv"); 
+          
+                }
+
+            }
+
+        }
+
+    }
+
+    PprincipalMicroondas.EnergiaAhorrada.setText("Energia a ahorrar "+formato.format(EnergiaAhorrar));
+    PprincipalMicroondas.EnergiaDesperdiciada.setText("Energia a desperdiciar "+formato.format(EnergiaAhorrar));
+    
+    //LAVADORA
+    EnergiaAhorrar = 0.0;
+    ///////MICROONDAS
+    for(int i = 0; i<5;i++){
+        String s =  usuario.ConsejosActualesLavadora.get(i);
+        boolean x = s.equals(consejos11[0][0]);
+        boolean y = s.equals(consejos11[1][0]);
+        boolean z = s.equals(consejos11[2][0]);
+        if(x || y || z){
+
+
+            System.out.println("ENtro");
+           if(PprincipalLavadora.Consejo1Lavadora.getText().equals(s)){
+               if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos11[0][1])/100) *8.8 ;
+
+                 PprincipalLavadora.Consejo1LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos11[0][1])/100)*8.8))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos11[1][1])/100)*8.8;
+                   PprincipalLavadora.Consejo1LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos11[1][1])/100)*8.8))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos11[2][1])/100)*8.8;
+                    PprincipalLavadora.Consejo1LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos11[2][1])/100)*8.8))+"Kv"); 
+          
+                }
+
+            }
+           if(PprincipalLavadora.Consejo2Lavadora.getText().equals(s)){
+               if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos11[0][1])/100) *8.8 ;
+
+                 PprincipalLavadora.Consejo2LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos11[0][1])/100)*8.8))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos11[1][1])/100)*8.8;
+                   PprincipalLavadora.Consejo2LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos11[1][1])/100)*8.8))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos11[2][1])/100)*8.8;
+                    PprincipalLavadora.Consejo2LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos11[2][1])/100)*8.8))+"Kv"); 
+          
+                }
+
+            }
+            if(PprincipalLavadora.Consejo3Lavadora.getText().equals(s)){
+                if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos11[0][1])/100) *8.8 ;
+
+                 PprincipalLavadora.Consejo3LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos11[0][1])/100)*8.8))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos11[1][1])/100)*8.8;
+                   PprincipalLavadora.Consejo3LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos11[1][1])/100)*8.8))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos11[2][1])/100)*8.8;
+                    PprincipalLavadora.Consejo3LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos11[2][1])/100)*8.8))+"Kv"); 
+          
+                }
+
+            }
+
+            if(PprincipalLavadora.Consejo4Lavadora.getText().equals(s)){
+               if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos11[0][1])/100) *8.8 ;
+
+                 PprincipalLavadora.Consejo4LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos11[0][1])/100)*8.8))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos11[1][1])/100)*8.8;
+                   PprincipalLavadora.Consejo4LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos11[1][1])/100)*8.8))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos11[2][1])/100)*8.8;
+                    PprincipalLavadora.Consejo4LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos11[2][1])/100)*8.8))+"Kv"); 
+          
+                }
+
+            }
+            if(PprincipalLavadora.Consejo5Lavadora.getText().equals(s)){
+                if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos11[0][1])/100) *8.8 ;
+
+                 PprincipalLavadora.Consejo5LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos11[0][1])/100)*8.8))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos11[1][1])/100)*8.8;
+                   PprincipalLavadora.Consejo5LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos11[1][1])/100)*8.8))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos11[2][1])/100)*8.8;
+                    PprincipalLavadora.Consejo5LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos11[2][1])/100)*8.8))+"Kv"); 
+          
+                }
+
+              
+
+            }
+
+        }
+
+    }
+    
+    for(int i = 0; i<5;i++){
+        String s =  usuario.ConsejosActualesLavadora.get(i);
+        boolean x = s.equals(consejos13[0][0]);
+        boolean y = s.equals(consejos11[1][0]);
+        boolean z = s.equals(consejos11[2][0]);
+        if(x || y || z){
+
+
+            System.out.println("ENtro");
+           if(PprincipalLavadora.Consejo1Lavadora.getText().equals(s)){
+               if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos13[0][1])/100) *8.8 ;
+
+                 PprincipalLavadora.Consejo1LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos13[0][1])/100)*8.8))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos13[1][1])/100)*8.8;
+                   PprincipalLavadora.Consejo1LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos13[1][1])/100)*8.8))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos13[2][1])/100)*8.8;
+                    PprincipalLavadora.Consejo1LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos13[2][1])/100)*8.8))+"Kv"); 
+          
+                }
+
+            }
+           if(PprincipalLavadora.Consejo2Lavadora.getText().equals(s)){
+               if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos13[0][1])/100) *8.8 ;
+
+                 PprincipalLavadora.Consejo2LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos13[0][1])/100)*8.8))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos13[1][1])/100)*8.8;
+                   PprincipalLavadora.Consejo2LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos13[1][1])/100)*8.8))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos13[2][1])/100)*8.8;
+                    PprincipalLavadora.Consejo2LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos13[2][1])/100)*8.8))+"Kv"); 
+          
+                }
+
+            }
+            if(PprincipalLavadora.Consejo3Lavadora.getText().equals(s)){
+                if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos13[0][1])/100) *8.8 ;
+
+                 PprincipalLavadora.Consejo3LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos13[0][1])/100)*8.8))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos13[1][1])/100)*8.8;
+                   PprincipalLavadora.Consejo3LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos13[1][1])/100)*8.8))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos13[2][1])/100)*8.8;
+                    PprincipalLavadora.Consejo3LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos13[2][1])/100)*8.8))+"Kv"); 
+          
+                }
+
+            }
+
+            if(PprincipalLavadora.Consejo4Lavadora.getText().equals(s)){
+               if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos13[0][1])/100) *8.8 ;
+
+                 PprincipalLavadora.Consejo4LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos13[0][1])/100)*8.8))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos13[1][1])/100)*8.8;
+                   PprincipalLavadora.Consejo4LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos13[1][1])/100)*8.8))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos13[2][1])/100)*8.8;
+                    PprincipalLavadora.Consejo4LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos13[2][1])/100)*8.8))+"Kv"); 
+          
+                }
+
+            }
+            if(PprincipalLavadora.Consejo5Lavadora.getText().equals(s)){
+                if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos13[0][1])/100) *8.8 ;
+
+                 PprincipalLavadora.Consejo5LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos13[0][1])/100)*8.8))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos13[1][1])/100)*8.8;
+                   PprincipalLavadora.Consejo5LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos13[1][1])/100)*8.8))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos13[2][1])/100)*8.8;
+                    PprincipalLavadora.Consejo5LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos13[2][1])/100)*8.8))+"Kv"); 
+          
+                }
+
+              
+
+            }
+
+        }
+    }
+    for(int i = 0; i<5;i++){
+        String s =  usuario.ConsejosActualesLavadora.get(i);
+        boolean x = s.equals(consejos12[0][0]);
+        boolean y = s.equals(consejos12[1][0]);
+        boolean z = s.equals(consejos12[2][0]);
+        boolean w = s.equals(consejos12[3][0]);
+        if(x || y || z || w){
+
+
+           System.out.println("ENtro");
+           if(PprincipalLavadora.Consejo1Lavadora.getText().equals(s)){
+               if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos12[0][1])/100) *8.8 ;
+
+                 PprincipalLavadora.Consejo1LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos12[0][1])/100)*8.8))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos12[1][1])/100)*8.8;
+                   PprincipalLavadora.Consejo1LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos12[1][1])/100)*8.8))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos12[2][1])/100)*8.8;
+                    PprincipalLavadora.Consejo1LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos12[2][1])/100)*8.8))+"Kv"); 
+          
+                }else if(w){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos12[3][1])/100)*8.8;
+                    PprincipalLavadora.Consejo1LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos12[3][1])/100)*8.8))+"Kv"); 
+
+                    
+                }
+
+            }
+           if(PprincipalLavadora.Consejo2Lavadora.getText().equals(s)){
+               if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos12[0][1])/100) *8.8 ;
+
+                 PprincipalLavadora.Consejo2LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos12[0][1])/100)*8.8))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos12[1][1])/100)*8.8;
+                   PprincipalLavadora.Consejo2LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos12[1][1])/100)*8.8))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos12[2][1])/100)*8.8;
+                    PprincipalLavadora.Consejo2LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos12[2][1])/100)*8.8))+"Kv"); 
+          
+                }else if(w){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos12[3][1])/100)*8.8;
+                    PprincipalLavadora.Consejo2LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos12[3][1])/100)*8.8))+"Kv"); 
+
+                    
+                }
+
+            }
+            if(PprincipalLavadora.Consejo3Lavadora.getText().equals(s)){
+                if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos12[0][1])/100) *8.8 ;
+
+                 PprincipalLavadora.Consejo3LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos12[0][1])/100)*8.8))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos12[1][1])/100)*8.8;
+                   PprincipalLavadora.Consejo3LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos12[1][1])/100)*8.8))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos12[2][1])/100)*8.8;
+                    PprincipalLavadora.Consejo3LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos12[2][1])/100)*8.8))+"Kv"); 
+          
+                }else if(w){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos12[3][1])/100)*8.8;
+                    PprincipalLavadora.Consejo3LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos12[3][1])/100)*8.8))+"Kv"); 
+
+                    
+                }
+
+            }
+
+            if(PprincipalLavadora.Consejo4Lavadora.getText().equals(s)){
+               if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos12[0][1])/100) *8.8 ;
+
+                 PprincipalLavadora.Consejo4LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos12[0][1])/100)*8.8))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos12[1][1])/100)*8.8;
+                   PprincipalLavadora.Consejo4LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos12[1][1])/100)*8.8))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos12[2][1])/100)*8.8;
+                    PprincipalLavadora.Consejo4LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos12[2][1])/100)*8.8))+"Kv"); 
+          
+                }else if(w){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos12[3][1])/100)*8.8;
+                    PprincipalLavadora.Consejo4LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos12[3][1])/100)*8.8))+"Kv"); 
+
+                    
+                }
+
+            }
+            if(PprincipalLavadora.Consejo5Lavadora.getText().equals(s)){
+                if (x){
+                 EnergiaAhorrar+=  (Double.valueOf(consejos12[0][1])/100) *8.8 ;
+
+                 PprincipalLavadora.Consejo5LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos12[0][1])/100)*8.8))+"Kv");   
+               }else if (y){
+                   EnergiaAhorrar+=  (Double.valueOf(consejos12[1][1])/100)*8.8;
+                   PprincipalLavadora.Consejo5LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos12[1][1])/100)*8.8))+"Kv"); 
+                }else if(z){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos12[2][1])/100)*8.8;
+                    PprincipalLavadora.Consejo5LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos12[2][1])/100)*8.8))+"Kv"); 
+          
+                }else if(w){
+                    EnergiaAhorrar+=  (Double.valueOf(consejos12[3][1])/100)*8.8;
+                    PprincipalLavadora.Consejo5LavadoraE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos12[3][1])/100)*8.8))+"Kv"); 
+
+                    
+                }
+
+              
+
+            }
+
+        }
+    }
+    PprincipalLavadora.EnergiaAhorrada.setText("Energia a ahorrar "+formato.format(EnergiaAhorrar));
+    PprincipalLavadora.EnergiaDesperdiciada.setText("Energia a desperdiciar "+formato.format(EnergiaAhorrar));
+
+                    
+}
     /**
      * @param args the command line arguments
      */
