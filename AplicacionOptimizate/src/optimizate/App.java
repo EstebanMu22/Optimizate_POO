@@ -17,14 +17,10 @@ public class App {
     
     public static void main(String[] args) throws IOException, ClassNotFoundException{
   
-        
-       
-        
-        
+
         Optimizate app = new Optimizate();
-        
-        
         app.setVisible(true);
+        
         app.ListaUsuarios.VerApodosUsuarios();
         
         

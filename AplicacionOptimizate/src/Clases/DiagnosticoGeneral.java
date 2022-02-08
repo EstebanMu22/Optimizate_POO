@@ -6,6 +6,7 @@ package Clases;
 
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.io.Serializable;
 import java.util.Scanner;
 import javax.swing.ImageIcon;
 
@@ -13,11 +14,11 @@ import javax.swing.ImageIcon;
  *
  * @author sergio andres
  */
-public class DiagnosticoGeneral {
+public class DiagnosticoGeneral implements Serializable {
     
     Electrodomesticos electrodomesticos;
     
-    
+    protected boolean Elegido;
     //Booleano para saber si ahorra energia en su casa
     protected boolean Ahorra;    //VARIABLE DE UNA SUPERCLASE
     //Booleano para saber si mensualmente paga caro el recibo
@@ -34,20 +35,24 @@ public class DiagnosticoGeneral {
     protected int Numero_Aparatos;
     //numero de horas de uso
     protected int HorasDeUso; 
-    protected Image Imagen;
-    //La imagen pero como un icono
-    protected ImageIcon Icono ;
+
     
-    //Herramienta necesaria para leer una imagen
-    protected Toolkit miPantalla = Toolkit.getDefaultToolkit();
     
     public DiagnosticoGeneral(){
-        this(false,false,false,false,false,0,0,0);
+       
+        
+    }
+    public Electrodomesticos GetElectrodomesticos(){
+        return electrodomesticos;
+        
     }
     
-    public DiagnosticoGeneral(boolean Ahorra, boolean Recibo, boolean UsarMenos, boolean Ahorradores,boolean enfocarse, int Exigencia,int HorasDeUso,int NumeroAparatos){
-        electrodomesticos = new Electrodomesticos(Ahorra,Recibo,UsarMenos,Ahorradores,Enfocarse,Exigencia,HorasDeUso,NumeroAparatos);
+    public DiagnosticoGeneral(boolean Elegido,boolean Ahorra, boolean Recibo, boolean UsarMenos, boolean Ahorradores,boolean enfocarse, int Exigencia,int HorasDeUso,int NumeroAparatos){
+        System.out.println("Se esta ejecutando?");
         
+        electrodomesticos = new Electrodomesticos(Elegido,Ahorra,Recibo,UsarMenos,Ahorradores,enfocarse,Exigencia,HorasDeUso,NumeroAparatos);
+        electrodomesticos.CrearConsejosTerminados();
+        System.out.println("Consejos bombillo,nevera,microondas y lavadora creados correctamente");
     }
     public boolean ObtenerRecibo(){
         return Recibo;
@@ -78,41 +83,11 @@ public class DiagnosticoGeneral {
     public int ObtenerHorasDeUso(){      
         return HorasDeUso ;
     }
-    public Image ObtenerImagen(){
-        return Imagen;
-    }
+
     
     //Configura el ImageIcon
-    private ImageIcon ObtenerImageIcon(){
-        return Icono ;
-    }
-    public void configurarImagenElectrodomestico(String direccionDeMemoria){
-        
-        boolean flag = true;
-        
-        Scanner sc = new Scanner(System.in);
-        
-        while(flag){
-            
-            direccionDeMemoria = sc.nextLine();
-            try{
-                Imagen = miPantalla.getImage(direccionDeMemoria);
-                flag= false;
-            }catch(Exception e){
-                
-                System.out.println("Direccion Incorrecta. Vuelva e intente");
-            }
-            
-        }  
-        
-        ConfigurarImageIconElectrodomestico();
-    }
-    
-    //Configura el ImageIcon
-    private void ConfigurarImageIconElectrodomestico(){
-        Icono = new ImageIcon(Imagen); 
-    }
-    
+
+
     
     
     //setters

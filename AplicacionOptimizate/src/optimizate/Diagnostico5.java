@@ -26,19 +26,20 @@ public class Diagnostico5 extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        SeleccionExigencia = new javax.swing.ButtonGroup();
         jPanel6 = new javax.swing.JPanel();
         jSeparator4 = new javax.swing.JSeparator();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
-        jCheckBox10 = new javax.swing.JCheckBox();
-        jCheckBox11 = new javax.swing.JCheckBox();
         jLabel25 = new javax.swing.JLabel();
-        jCheckBox12 = new javax.swing.JCheckBox();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
-        AparatosCombo = new javax.swing.JComboBox<>();
+        EnfocarseCombo = new javax.swing.JComboBox<>();
+        MaximoAhorroRadio = new javax.swing.JRadioButton();
+        MedioAhorroRadio = new javax.swing.JRadioButton();
+        FacilAhorroRadio = new javax.swing.JRadioButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -51,6 +52,7 @@ public class Diagnostico5 extends javax.swing.JPanel {
         jLabel22.setText("<html><b>¡Por ultimo!</b></html>");
 
         jLabel23.setText("Seleccione en qué tipo de ahorro le gustaría enfocarse");
+        jLabel23.setToolTipText("Si no selecciona ninguna, se seleccionara ahorro medio");
 
         jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel24.setText("Ahorro máximo posible en tu hogar");
@@ -68,7 +70,28 @@ public class Diagnostico5 extends javax.swing.JPanel {
 
         jLabel28.setText("<html><b>Si no desea enfocarse en algún electrodoméstico, seleccione la opción \"Ninguno\"</b></html>");
 
-        AparatosCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Computador", "Celular", "Electrodomesticos" }));
+        EnfocarseCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Computador", "Celular", "Electrodomesticos" }));
+
+        SeleccionExigencia.add(MaximoAhorroRadio);
+        MaximoAhorroRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MaximoAhorroRadioActionPerformed(evt);
+            }
+        });
+
+        SeleccionExigencia.add(MedioAhorroRadio);
+        MedioAhorroRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MedioAhorroRadioActionPerformed(evt);
+            }
+        });
+
+        SeleccionExigencia.add(FacilAhorroRadio);
+        FacilAhorroRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FacilAhorroRadioActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -93,20 +116,20 @@ public class Diagnostico5 extends javax.swing.JPanel {
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jCheckBox11))
+                                .addComponent(MedioAhorroRadio))
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jCheckBox10))
+                                .addComponent(MaximoAhorroRadio))
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jCheckBox12))
+                                .addComponent(FacilAhorroRadio))
                             .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(24, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(AparatosCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(EnfocarseCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(216, 216, 216))
         );
         jPanel6Layout.setVerticalGroup(
@@ -120,20 +143,20 @@ public class Diagnostico5 extends javax.swing.JPanel {
                 .addComponent(jLabel23)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox10)
-                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MaximoAhorroRadio))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox11)
-                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MedioAhorroRadio))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox12)
-                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FacilAhorroRadio))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel27)
                 .addGap(17, 17, 17)
-                .addComponent(AparatosCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(EnfocarseCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(73, Short.MAX_VALUE))
@@ -151,12 +174,25 @@ public class Diagnostico5 extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void MaximoAhorroRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MaximoAhorroRadioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MaximoAhorroRadioActionPerformed
+
+    private void MedioAhorroRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MedioAhorroRadioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MedioAhorroRadioActionPerformed
+
+    private void FacilAhorroRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FacilAhorroRadioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FacilAhorroRadioActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    protected javax.swing.JComboBox<String> AparatosCombo;
-    private javax.swing.JCheckBox jCheckBox10;
-    private javax.swing.JCheckBox jCheckBox11;
-    private javax.swing.JCheckBox jCheckBox12;
+    protected javax.swing.JComboBox<String> EnfocarseCombo;
+    protected javax.swing.JRadioButton FacilAhorroRadio;
+    protected javax.swing.JRadioButton MaximoAhorroRadio;
+    protected javax.swing.JRadioButton MedioAhorroRadio;
+    private javax.swing.ButtonGroup SeleccionExigencia;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;

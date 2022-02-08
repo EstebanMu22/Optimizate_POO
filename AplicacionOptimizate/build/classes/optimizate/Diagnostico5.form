@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="SeleccionExigencia">
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -80,17 +84,17 @@
                               <Group type="102" attributes="0">
                                   <Component id="jLabel25" min="-2" pref="341" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jCheckBox11" min="-2" max="-2" attributes="0"/>
+                                  <Component id="MedioAhorroRadio" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Component id="jLabel24" min="-2" pref="341" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jCheckBox10" min="-2" max="-2" attributes="0"/>
+                                  <Component id="MaximoAhorroRadio" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel26" min="-2" pref="341" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jCheckBox12" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FacilAhorroRadio" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jLabel27" alignment="0" min="-2" pref="370" max="-2" attributes="0"/>
                           </Group>
@@ -100,7 +104,7 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="AparatosCombo" min="-2" max="-2" attributes="0"/>
+                  <Component id="EnfocarseCombo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="216" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -116,23 +120,23 @@
                   <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jCheckBox10" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel24" alignment="0" min="-2" pref="21" max="-2" attributes="0"/>
+                      <Component id="MaximoAhorroRadio" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jCheckBox11" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel25" alignment="0" min="-2" pref="21" max="-2" attributes="0"/>
+                      <Component id="MedioAhorroRadio" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jCheckBox12" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel26" alignment="0" min="-2" pref="21" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jLabel26" min="-2" pref="21" max="-2" attributes="0"/>
+                      <Component id="FacilAhorroRadio" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                  <Component id="AparatosCombo" min="-2" max="-2" attributes="0"/>
+                  <Component id="EnfocarseCombo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="73" max="32767" attributes="0"/>
@@ -151,6 +155,7 @@
         <Component class="javax.swing.JLabel" name="jLabel23">
           <Properties>
             <Property name="text" type="java.lang.String" value="Seleccione en qu&#xe9; tipo de ahorro le gustar&#xed;a enfocarse"/>
+            <Property name="toolTipText" type="java.lang.String" value="Si no selecciona ninguna, se seleccionara ahorro medio"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel24">
@@ -164,10 +169,6 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox10">
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox11">
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel25">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
@@ -178,8 +179,6 @@
               </Border>
             </Property>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox12">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel26">
           <Properties>
@@ -202,7 +201,7 @@
             <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;b&gt;Si no desea enfocarse en alg&#xfa;n electrodom&#xe9;stico, seleccione la opci&#xf3;n &quot;Ninguno&quot;&lt;/b&gt;&lt;/html&gt;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="AparatosCombo">
+        <Component class="javax.swing.JComboBox" name="EnfocarseCombo">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="3">
@@ -214,6 +213,45 @@
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="MaximoAhorroRadio">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="SeleccionExigencia"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MaximoAhorroRadioActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="MedioAhorroRadio">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="SeleccionExigencia"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MedioAhorroRadioActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="FacilAhorroRadio">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="SeleccionExigencia"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FacilAhorroRadioActionPerformed"/>
+          </Events>
+          <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
           </AuxValues>
         </Component>

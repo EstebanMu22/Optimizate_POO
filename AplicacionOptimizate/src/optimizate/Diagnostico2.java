@@ -69,6 +69,12 @@ public class Diagnostico2 extends javax.swing.JPanel {
         jLabel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jLabel11.setPreferredSize(new java.awt.Dimension(110, 117));
 
+        CelularSpinner.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                CelularSpinnerStateChanged(evt);
+            }
+        });
+
         jLabel18.setText("Electrodomesticos");
 
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -168,6 +174,10 @@ public class Diagnostico2 extends javax.swing.JPanel {
     private void ElectrodomesticosSpinnerStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ElectrodomesticosSpinnerStateChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_ElectrodomesticosSpinnerStateChanged
+
+    private void CelularSpinnerStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_CelularSpinnerStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CelularSpinnerStateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

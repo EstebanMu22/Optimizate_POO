@@ -23,6 +23,8 @@ public class Usuarios implements Serializable{
     
     protected String[] ListaStrings ;
     
+    protected boolean DiagnosticoHecho;
+    
     Usuario prueba;
     
   
@@ -36,15 +38,12 @@ public class Usuarios implements Serializable{
     public void CrearUsuario(String nombre, String apodo, int edad){
         
         Usuario usuario = new Usuario(nombre,apodo,edad);
+        usuario.DiagnosticoHecho = false;
         
       
         usuarios.put(nombre, usuario);
               
-       
-        
-        
-        
-        //usuarios.put(tamañoS, usuario);
+
        
     }
     public void SetStrings(){
@@ -64,11 +63,22 @@ public class Usuarios implements Serializable{
         return ListaStrings;
     }
     
-    
-    
-    public void AjustarConsejos(Usuario u,boolean Ahorra, boolean Recibo, boolean UsarMenos, boolean Ahorradores,boolean enfocarse, int Exigencia,int HorasDeUso,int NumeroAparatos){
+    public Usuario getUsuarioLlave(String llave){
         
-        u.ConsejosUsuario(Ahorra,Recibo,UsarMenos,Ahorradores,enfocarse,Exigencia,HorasDeUso,NumeroAparatos);
+        return usuarios.get(llave);
+   
+    }
+    
+    
+    public void AjustarConsejosUsuario(String u,boolean Elegido,boolean Ahorra, boolean Recibo, boolean UsarMenos, boolean Ahorradores,boolean enfocarse, int Exigencia,int HorasDeUso,int NumeroAparatos){
+        Usuario usu = getUsuarioLlave(u);
+        usu.ConsejosUsuario(Elegido,Ahorra,Recibo,UsarMenos,Ahorradores,enfocarse,Exigencia,HorasDeUso,NumeroAparatos);
+        usu.DiagnosticoHecho = true;
+        usuarios.replace(u, usu);
+        
+    }
+    public void ActualizarUsuario(String key,Usuario u){
+        usuarios.replace(key, u);
     }
     public void VerNombresUsuarios(){
         

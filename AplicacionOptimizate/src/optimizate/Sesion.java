@@ -56,6 +56,11 @@ public class Sesion extends javax.swing.JPanel {
         });
 
         ComboSesion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        ComboSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboSesionActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -145,6 +150,10 @@ public class Sesion extends javax.swing.JPanel {
     private void RegistroBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroBotonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_RegistroBotonActionPerformed
+
+    private void ComboSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboSesionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ComboSesionActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
