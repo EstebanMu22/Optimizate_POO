@@ -47,7 +47,7 @@ public class PantallaPrincipal extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jProgressBar1 = new javax.swing.JProgressBar();
+        ProgresoBombillos = new javax.swing.JProgressBar();
         BombilloKV = new javax.swing.JLabel();
         EnergiaAhorrada = new javax.swing.JLabel();
         EnergiaDesperdiciada = new javax.swing.JLabel();
@@ -85,6 +85,8 @@ public class PantallaPrincipal extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("<html><b>Tareas  Bombillos</b></html>");
+
+        ProgresoBombillos.setMaximum(5);
 
         BombilloKV.setText("Energia Gastada: 500 kv");
 
@@ -149,7 +151,7 @@ public class PantallaPrincipal extends javax.swing.JPanel {
                                 .addGap(30, 30, 30)
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(ProgresoBombillos, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(216, 216, 216)
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -217,7 +219,7 @@ public class PantallaPrincipal extends javax.swing.JPanel {
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(ProgresoBombillos, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -296,12 +298,12 @@ public class PantallaPrincipal extends javax.swing.JPanel {
     protected javax.swing.JLabel Consejo5BombilloE;
     protected javax.swing.JLabel EnergiaAhorrada;
     protected javax.swing.JLabel EnergiaDesperdiciada;
+    protected javax.swing.JProgressBar ProgresoBombillos;
     protected javax.swing.JSeparator Separador4;
     protected javax.swing.JSeparator Separador5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

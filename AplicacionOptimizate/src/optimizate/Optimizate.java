@@ -13,6 +13,8 @@ import javax.swing.JPanel;
 import java.awt.*;
 
 import Clases.Usuarios;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.IOException;
@@ -20,6 +22,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -861,37 +864,645 @@ private class Diagnostico_5 extends Diagnostico5{
     }
     
 }
-    
-private class PrincipalBombillos extends PantallaPrincipal implements ActionListener{
-    
+ 
+    private void CheckBoxConsejosBombillos() throws IOException, ClassNotFoundException{
+        Random Aleatorio = new Random();
         
+        if(PprincipalBombillos.conBOM1 == true && PprincipalBombillos.conBOM2 == true && PprincipalBombillos.conBOM3 == true && PprincipalBombillos.conBOM4 == true && PprincipalBombillos.conBOM5== true){
+            
+            JOptionPane.showMessageDialog(rootPane, "Ha completado todos los consejos- Espera hasta la siguiente semana por nuevos");
+        } 
+    }
+private class PrincipalBombillos extends PantallaPrincipal{
+    
+    public boolean conBOM1 = false;
+    public boolean conBOM2 = false;
+    public boolean conBOM3 = false;
+    public boolean conBOM4 = false;
+    public boolean conBOM5 = false;
+    
+    int x = 0;
+    
+    public void actualizar(){
+        x = ProgresoBombillos.getValue()+1;
+    }
+    public void desactualizar(){
+        x = ProgresoBombillos.getValue()-1;
+    }
+            
     public PrincipalBombillos(){
         
-        
-        
-        
-        
+       Consejo1Bombillo.addItemListener(new ItemListener(){
+           @Override
+           public void itemStateChanged(ItemEvent e) {
+               conBOM1 = e.getStateChange()== ItemEvent.SELECTED;
+               System.out.println(conBOM1);
+               try {
+                   CheckBoxConsejosBombillos();
+               } catch (IOException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               } catch (ClassNotFoundException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               }
+               if(conBOM1){
+                   System.out.println("entro");
+                   actualizar();
+                   ProgresoBombillos.setValue(x);
+                   
+                   
+                   
+               }else{
+                   System.out.println("desentro");
+                   desactualizar();
+                   ProgresoBombillos.setValue(x);
+                   
+               }
+               
+               
+           }
+           
+       });
+       
+       Consejo2Bombillo.addItemListener(new ItemListener(){
+           @Override
+           public void itemStateChanged(ItemEvent e) {
+               conBOM2 = e.getStateChange()== ItemEvent.SELECTED;
+               try {
+                   CheckBoxConsejosBombillos();
+               } catch (IOException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               } catch (ClassNotFoundException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               }
+               if(conBOM2){
+                   actualizar();
+                   ProgresoBombillos.setValue(x);
+                   
+                   
+               }else{
+                   desactualizar();
+                   ProgresoBombillos.setValue(x);
+                   
+               }
+               
+               
+           }
+           
+       });
+       Consejo3Bombillo.addItemListener(new ItemListener(){
+           @Override
+           public void itemStateChanged(ItemEvent e) {
+               conBOM3 = e.getStateChange()== ItemEvent.SELECTED;
+               try {
+                   CheckBoxConsejosBombillos();
+               } catch (IOException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               } catch (ClassNotFoundException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               }
+               
+               if(conBOM3){
+                   actualizar();
+                   ProgresoBombillos.setValue(x);
+                   
+                   
+               }else{
+                   desactualizar();
+                   ProgresoBombillos.setValue(x);
+                   
+               }
+            }
+           
+       });
+       Consejo4Bombillo.addItemListener(new ItemListener(){
+           @Override
+           public void itemStateChanged(ItemEvent e) {
+               conBOM4 = e.getStateChange()== ItemEvent.SELECTED;
+               try {
+                   CheckBoxConsejosBombillos();
+               } catch (IOException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               } catch (ClassNotFoundException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               }
+               if(conBOM4){
+                   actualizar();
+                   ProgresoBombillos.setValue(x);
+                   
+                   
+               }else{
+                   desactualizar();
+                   ProgresoBombillos.setValue(x);
+                   
+               }
+               
+           }
+           
+       });
+       Consejo5Bombillo.addItemListener(new ItemListener(){
+           @Override
+           public void itemStateChanged(ItemEvent e) {
+               conBOM5 = e.getStateChange()== ItemEvent.SELECTED;
+               try {
+                   CheckBoxConsejosBombillos();
+               } catch (IOException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               } catch (ClassNotFoundException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               }
+               if(conBOM5){
+                   actualizar();
+                   ProgresoBombillos.setValue(x);
+                   
+                   
+               }else{
+                   desactualizar();
+                   ProgresoBombillos.setValue(x);
+                   
+               }
+               
+           }
+           
+       });
     }
        
-    private void LogoMenuActionPerformed(java.awt.event.ActionEvent evt) {  
-        menu.setVisible(true);
-       
-    }                                       
+                                             
+}
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        System.out.println("Aqui estot");
-        LogoMenuActionPerformed(e);
-     }
-    
+public void CheckBoxConsejosNevera() throws IOException, ClassNotFoundException{
+    Random Aleatorio = new Random();
+    if(PprincipalNevera.conNEV1 == true && PprincipalNevera.conNEV2 == true && PprincipalNevera.conNEV3 == true && PprincipalNevera.conNEV4 == true && PprincipalNevera.conNEV5== true){
+            
+        JOptionPane.showMessageDialog(rootPane, "Ha completado todos los consejos- Espera hasta la siguiente semana por nuevos");
+    }        
+  
 }
 private class PrincipalNevera extends NeveraPantalla{
+    public boolean conNEV1 = false;
+    public boolean conNEV2 = false;
+    public boolean conNEV3 = false;
+    public boolean conNEV4 = false;
+    public boolean conNEV5 = false;
+    int x = 0;
+    
+    public void actualizar(){
+        x = ProgresoNevera.getValue()+1;
+    }
+    public void desactualizar(){
+        x = ProgresoNevera.getValue()-1;
+    }
+    
+    public PrincipalNevera(){
+        Consejo1Nevera.addItemListener(new ItemListener(){
+           @Override
+           public void itemStateChanged(ItemEvent e) {
+               conNEV1 = e.getStateChange()== ItemEvent.SELECTED;
+               try {
+                   CheckBoxConsejosNevera();
+               } catch (IOException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               } catch (ClassNotFoundException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               }
+               if(conNEV1){
+                   actualizar();
+                   ProgresoNevera.setValue(x);
+                   
+                   
+               }else{
+                   desactualizar();
+                   ProgresoNevera.setValue(x);
+                   
+               }
+               
+           }
+           
+       });
+       
+       Consejo2Nevera.addItemListener(new ItemListener(){
+           @Override
+           public void itemStateChanged(ItemEvent e) {
+               conNEV2 = e.getStateChange()== ItemEvent.SELECTED;
+               try {
+                   CheckBoxConsejosNevera();
+               } catch (IOException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               } catch (ClassNotFoundException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               }
+               if(conNEV2){
+                   actualizar();
+                   ProgresoNevera.setValue(x);
+                   
+                   
+               }else{
+                   desactualizar();
+                   ProgresoNevera.setValue(x);
+                   
+               }
+               
+               
+           }
+           
+       });
+       Consejo3Nevera.addItemListener(new ItemListener(){
+           @Override
+           public void itemStateChanged(ItemEvent e) {
+               conNEV3 = e.getStateChange()== ItemEvent.SELECTED;
+               try {
+                   CheckBoxConsejosNevera();
+               } catch (IOException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               } catch (ClassNotFoundException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               }
+               if(conNEV3){
+                   actualizar();
+                   ProgresoNevera.setValue(x);
+                   
+                   
+               }else{
+                   desactualizar();
+                   ProgresoNevera.setValue(x);
+                   
+               }
+               
+            }
+           
+       });
+       Consejo4Nevera.addItemListener(new ItemListener(){
+           @Override
+           public void itemStateChanged(ItemEvent e) {
+               conNEV4 = e.getStateChange()== ItemEvent.SELECTED;
+               try {
+                   CheckBoxConsejosNevera();
+               } catch (IOException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               } catch (ClassNotFoundException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               }
+               if(conNEV4){
+                   actualizar();
+                   ProgresoNevera.setValue(x);
+                   
+                   
+               }else{
+                   desactualizar();
+                   ProgresoNevera.setValue(x);
+                   
+               }
+               
+           }
+           
+       });
+       Consejo5Nevera.addItemListener(new ItemListener(){
+           @Override
+           public void itemStateChanged(ItemEvent e) {
+               conNEV5 = e.getStateChange()== ItemEvent.SELECTED;
+               try {
+                   CheckBoxConsejosNevera();
+               } catch (IOException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               } catch (ClassNotFoundException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               }
+               if(conNEV5){
+                   actualizar();
+                   ProgresoNevera.setValue(x);
+                   
+                   
+               }else{
+                   desactualizar();
+                   ProgresoNevera.setValue(x);
+                   
+               }
+               
+           }
+           
+       });
+    
+        
+    }
+    
+}
+
+public void CheckBoxConsejosMicroondas() throws IOException, ClassNotFoundException{
+    if(PprincipalMicroondas.conMIC1 == true && PprincipalMicroondas.conMIC2 == true && PprincipalMicroondas.conMIC3 == true && PprincipalMicroondas.conMIC4 == true && PprincipalMicroondas.conMIC5== true){
+        
+        
+        
+        JOptionPane.showMessageDialog(rootPane, "Ha completado todos los consejos- Espera hasta la siguiente semana por nuevos");
+    }
+    
     
 }
 private class PrincipalMicroondas extends MicroondasPantalla{
+    public boolean conMIC1 = false;
+    public boolean conMIC2 = false;
+    public boolean conMIC3 = false;
+    public boolean conMIC4 = false;
+    public boolean conMIC5 = false;
+    
+    int x = 0;
+    
+    public void actualizar(){
+        x = ProgresoMicroondas.getValue()+1;
+    }
+    public void desactualizar(){
+        x = ProgresoMicroondas.getValue()-1;
+    }
+    
+    public PrincipalMicroondas(){
+        Consejo1Microondas.addItemListener(new ItemListener(){
+           @Override
+           public void itemStateChanged(ItemEvent e) {
+               conMIC1 = e.getStateChange()== ItemEvent.SELECTED;
+               try {
+                   CheckBoxConsejosMicroondas();
+               } catch (IOException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               } catch (ClassNotFoundException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               }
+               if(conMIC1){
+                   actualizar();
+                   ProgresoMicroondas.setValue(x);
+                   
+                   
+               }else{
+                   desactualizar();
+                   ProgresoMicroondas.setValue(x);
+                   
+               }
+               
+               
+           }
+           
+       });
+       
+       Consejo2Microondas.addItemListener(new ItemListener(){
+           @Override
+           public void itemStateChanged(ItemEvent e) {
+               conMIC2 = e.getStateChange()== ItemEvent.SELECTED;
+               try {
+                   CheckBoxConsejosMicroondas();
+               } catch (IOException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               } catch (ClassNotFoundException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               }
+               if(conMIC2){
+                   actualizar();
+                   ProgresoMicroondas.setValue(x);
+                   
+                   
+               }else{
+                   desactualizar();
+                   ProgresoMicroondas.setValue(x);
+                   
+               }
+               
+               
+           }
+           
+       });
+       Consejo3Microondas.addItemListener(new ItemListener(){
+           @Override
+           public void itemStateChanged(ItemEvent e) {
+               conMIC3 = e.getStateChange()== ItemEvent.SELECTED;
+               try {
+                   CheckBoxConsejosMicroondas();
+               } catch (IOException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               } catch (ClassNotFoundException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               }
+               if(conMIC3){
+                   actualizar();
+                   ProgresoMicroondas.setValue(x);
+                   
+                   
+               }else{
+                   desactualizar();
+                   ProgresoMicroondas.setValue(x);
+                   
+               }
+               
+            }
+           
+       });
+       Consejo4Microondas.addItemListener(new ItemListener(){
+           @Override
+           public void itemStateChanged(ItemEvent e) {
+               conMIC4 = e.getStateChange()== ItemEvent.SELECTED;
+               try {
+                   CheckBoxConsejosMicroondas();
+               } catch (IOException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               } catch (ClassNotFoundException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               }
+               if(conMIC4){
+                   actualizar();
+                   ProgresoMicroondas.setValue(x);
+                   
+                   
+               }else{
+                   desactualizar();
+                   ProgresoMicroondas.setValue(x);
+                   
+               }
+               
+           }
+           
+       });
+       Consejo5Microondas.addItemListener(new ItemListener(){
+           @Override
+           public void itemStateChanged(ItemEvent e) {
+               conMIC5 = e.getStateChange()== ItemEvent.SELECTED;
+               try {
+                   CheckBoxConsejosMicroondas();
+               } catch (IOException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               } catch (ClassNotFoundException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               }
+               if(conMIC5){
+                   actualizar();
+                   ProgresoMicroondas.setValue(x);
+                   
+                   
+               }else{
+                   desactualizar();
+                   ProgresoMicroondas.setValue(x);
+                   
+               }
+               
+           }
+           
+       });
+        
+        
+    }
+    
     
 }
+
+
+private void CheckBoxConsejosLavadora() throws IOException, ClassNotFoundException{
+    
+    if(PprincipalLavadora.conLAV1 == true && PprincipalLavadora.conLAV2 == true && PprincipalLavadora.conLAV3 == true && PprincipalLavadora.conLAV4 == true && PprincipalLavadora.conLAV5== true){
+        JOptionPane.showMessageDialog(rootPane, "Ha completado todos los consejos- Espera hasta la siguiente semana por nuevos");
+    }
+}
 private class PrincipalLavadora extends LavadoraPantalla{
+    public boolean conLAV1 = false;
+    public boolean conLAV2 = false;
+    public boolean conLAV3 = false;
+    public boolean conLAV4 = false;
+    public boolean conLAV5 = false;
+    
+    int x = 0;
+    
+    public void actualizar(){
+        x = ProgresoLavadora.getValue()+1;
+    }
+    public void desactualizar(){
+        x = ProgresoLavadora.getValue()-1;
+    }
+    
+    public PrincipalLavadora(){
+        Consejo1Lavadora.addItemListener(new ItemListener(){
+           @Override
+           public void itemStateChanged(ItemEvent e) {
+               conLAV1 = e.getStateChange()== ItemEvent.SELECTED;
+               try {
+                   CheckBoxConsejosLavadora();
+               } catch (IOException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               } catch (ClassNotFoundException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               }
+               if(conLAV1){
+                   actualizar();
+                   ProgresoLavadora.setValue(x);
+                   
+                   
+               }else{
+                   desactualizar();
+                   ProgresoLavadora.setValue(x);
+                   
+               }
+               
+               
+           }
+           
+       });
+       
+       Consejo2Lavadora.addItemListener(new ItemListener(){
+           @Override
+           public void itemStateChanged(ItemEvent e) {
+               conLAV2 = e.getStateChange()== ItemEvent.SELECTED;
+               try {
+                   CheckBoxConsejosLavadora();
+               } catch (IOException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               } catch (ClassNotFoundException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               }
+               if(conLAV2){
+                   actualizar();
+                   ProgresoLavadora.setValue(x);
+                   
+                   
+               }else{
+                   desactualizar();
+                   ProgresoLavadora.setValue(x);
+                   
+               }
+               
+               
+           }
+           
+       });
+       Consejo3Lavadora.addItemListener(new ItemListener(){
+           @Override
+           public void itemStateChanged(ItemEvent e) {
+               conLAV3 = e.getStateChange()== ItemEvent.SELECTED;
+               try {
+                   CheckBoxConsejosLavadora();
+               } catch (IOException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               } catch (ClassNotFoundException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               }
+               if(conLAV3){
+                   actualizar();
+                   ProgresoLavadora.setValue(x);
+                   
+                   
+               }else{
+                   desactualizar();
+                   ProgresoLavadora.setValue(x);
+                   
+               }
+               
+            }
+           
+       });
+       Consejo4Lavadora.addItemListener(new ItemListener(){
+           @Override
+           public void itemStateChanged(ItemEvent e) {
+               conLAV4 = e.getStateChange()== ItemEvent.SELECTED;
+               try {
+                   CheckBoxConsejosLavadora();
+               } catch (IOException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               } catch (ClassNotFoundException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               }
+               if(conLAV4){
+                   actualizar();
+                   ProgresoLavadora.setValue(x);
+                   
+                   
+               }else{
+                   desactualizar();
+                   ProgresoLavadora.setValue(x);
+                   
+               }
+               
+           }
+           
+       });
+       Consejo5Lavadora.addItemListener(new ItemListener(){
+           @Override
+           public void itemStateChanged(ItemEvent e) {
+               conLAV5 = e.getStateChange()== ItemEvent.SELECTED;
+               try {
+                   CheckBoxConsejosLavadora();
+               } catch (IOException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               } catch (ClassNotFoundException ex) {
+                   Logger.getLogger(Optimizate.class.getName()).log(Level.SEVERE, null, ex);
+               }
+               if(conLAV5){
+                   actualizar();
+                   ProgresoLavadora.setValue(x);
+                   
+                   
+               }else{
+                   desactualizar();
+                   ProgresoLavadora.setValue(x);
+                   
+               }
+               
+           }
+           
+       });
+    
+        
+    }
     
 }
 private class InicioDeSesion extends Sesion implements ActionListener{
@@ -1114,7 +1725,7 @@ public void ElectrodomesticosPantallas(){
 
     }
 
-    Double EnergiaAhorrar = 0.0d;
+    Double EnergiaAhorrar = 0.0;
     DecimalFormat formato = new DecimalFormat("#.00");
     
     //BOMBILLOS
@@ -1128,58 +1739,74 @@ public void ElectrodomesticosPantallas(){
 
             System.out.println("ENtro");
            if(PprincipalBombillos.Consejo1Bombillo.getText().equals(s)){
-               if (x){
-                 EnergiaAhorrar+=  (Double.valueOf(consejos4[0][1])/100) *21.6 ;
+               try{
+                    if (x){
+                      EnergiaAhorrar+=  (Double.valueOf(consejos4[0][1])/100) *21.6 ;
 
-                 PprincipalBombillos.Consejo1BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[1][1])/100)*21.6))+"Kv");   
-               }else if (y){
-                   EnergiaAhorrar+=  (Double.valueOf(consejos4[1][1])/100)*21.6;
-                   PprincipalBombillos.Consejo1BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[1][1])/100)*21.6))+"Kv"); 
-                }
+                      PprincipalBombillos.Consejo1BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[1][1])/100)*21.6))+"Kv");   
+                    }else if (y){
+                        EnergiaAhorrar+=  (Double.valueOf(consejos4[1][1])/100)*21.6;
+                        PprincipalBombillos.Consejo1BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[1][1])/100)*21.6))+"Kv"); 
+                     }
+               }catch(Exception e){
+                   
+               }
 
             }
            if(PprincipalBombillos.Consejo2Bombillo.getText().equals(s)){
-               if(x){
-                   EnergiaAhorrar+=  (Double.valueOf(consejos4[0][1])/100)*21.6;
-                   PprincipalBombillos.Consejo2BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[0][1])/100)*21.6))+"Kv");
-               }else if(y){
-                   EnergiaAhorrar+=  (Double.valueOf(consejos4[1][1])/100)*21.6;
-                   PprincipalBombillos.Consejo2BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[1][1])/100)*21.6))+"Kv");
+               try{
+                    if(x){
+                        EnergiaAhorrar+=  (Double.valueOf(consejos4[0][1])/100)*21.6;
+                        PprincipalBombillos.Consejo2BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[0][1])/100)*21.6))+"Kv");
+                    }else if(y){
+                        EnergiaAhorrar+=  (Double.valueOf(consejos4[1][1])/100)*21.6;
+                        PprincipalBombillos.Consejo2BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[1][1])/100)*21.6))+"Kv");
 
+                    }
+                }catch(Exception e){
+                   
                }
 
             }
             if(PprincipalBombillos.Consejo3Bombillo.getText().equals(s)){
-                if(x){
-                    EnergiaAhorrar+=  (Double.valueOf(consejos4[0][1])/100)*21.6;
-                    PprincipalBombillos.Consejo3BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[0][1])/100)*21.6))+"Kv");
-                }else if(y){
-                    EnergiaAhorrar+=  (Double.valueOf(consejos4[1][1])/100)*21.6;
-                    PprincipalBombillos.Consejo3BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[1][1])/100)*21.6))+"Kv");
-                }
-
+                try{
+                    if(x){
+                        EnergiaAhorrar+=  (Double.valueOf(consejos4[0][1])/100)*21.6;
+                        PprincipalBombillos.Consejo3BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[0][1])/100)*21.6))+"Kv");
+                    }else if(y){
+                        EnergiaAhorrar+=  (Double.valueOf(consejos4[1][1])/100)*21.6;
+                        PprincipalBombillos.Consejo3BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[1][1])/100)*21.6))+"Kv");
+                    }
+                }catch(Exception e){
+                   
+               }
             }
 
             if(PprincipalBombillos.Consejo4Bombillo.getText().equals(s)){
-               if(x){
-                   EnergiaAhorrar+=  (Double.valueOf(consejos4[0][1])/100)*21.6;
-                   PprincipalBombillos.Consejo4BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[0][1])/100)*21.6))+"Kv");
-               }else if(y){
-                   EnergiaAhorrar+=  (Double.valueOf(consejos4[1][1])/100)*21.6;
-                   PprincipalBombillos.Consejo4BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[1][1])/100)*21.6))+"Kv");
+                try{
+                    if(x){
+                        EnergiaAhorrar+=  (Double.valueOf(consejos4[0][1])/100)*21.6;
+                        PprincipalBombillos.Consejo4BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[0][1])/100)*21.6))+"Kv");
+                    }else if(y){
+                        EnergiaAhorrar+=  (Double.valueOf(consejos4[1][1])/100)*21.6;
+                        PprincipalBombillos.Consejo4BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[1][1])/100)*21.6))+"Kv");
+                    }
+                }catch(Exception e){
+                   
                }
-
             }
             if(PprincipalBombillos.Consejo5Bombillo.getText().equals(s)){
-
-               if(x){
-                   EnergiaAhorrar+=  (Double.valueOf(consejos4[0][1])/100)*21.6;
-                 PprincipalBombillos.Consejo5BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[0][1])/100)*21.6))+"Kv");  
-               }else if(y){
-                   EnergiaAhorrar+=  (Double.valueOf(consejos4[1][1])/100)*21.6;
-                   PprincipalBombillos.Consejo5BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[1][1])/100)*21.6))+"Kv");
+                try{
+                    if(x){
+                        EnergiaAhorrar+=  (Double.valueOf(consejos4[0][1])/100)*21.6;
+                      PprincipalBombillos.Consejo5BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[0][1])/100)*21.6))+"Kv");  
+                    }else if(y){
+                        EnergiaAhorrar+=  (Double.valueOf(consejos4[1][1])/100)*21.6;
+                        PprincipalBombillos.Consejo5BombilloE.setText("Energia Ahorrada "+(formato.format((Double.valueOf(consejos4[1][1])/100)*21.6))+"Kv");
+                    }
+                }catch(Exception e){
+                   
                }
-
             }
 
         }
